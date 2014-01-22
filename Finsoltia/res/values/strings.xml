@@ -4,5 +4,7 @@
     <string name="app_name">Finsoltia</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-    
+    <string name="euro">\u20ac</string>
+    <string name="pound">\u00a3</string>
+
 </resources>

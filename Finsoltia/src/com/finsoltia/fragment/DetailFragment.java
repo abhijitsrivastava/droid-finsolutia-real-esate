@@ -94,35 +94,27 @@ public class DetailFragment extends Fragment {
 
 				// changing marker color
 				if (i == 0)
-					marker.icon(BitmapDescriptorFactory
-							.defaultMarker(BitmapDescriptorFactory.HUE_AZURE));
+					marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.pin_red));
 				if (i == 1)
-					marker.icon(BitmapDescriptorFactory
-							.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
+					marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.pin_red));
 				if (i == 2)
-					marker.icon(BitmapDescriptorFactory
-							.defaultMarker(BitmapDescriptorFactory.HUE_CYAN));
+					marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.pin_red));
 				if (i == 3)
-					marker.icon(BitmapDescriptorFactory
-							.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
+					marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.pin_red));
 				if (i == 4)
-					marker.icon(BitmapDescriptorFactory
-							.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA));
+					marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.pin_red));
 				if (i == 5)
-					marker.icon(BitmapDescriptorFactory
-							.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE));
+					marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.pin_red));
 				if (i == 6)
-					marker.icon(BitmapDescriptorFactory
-							.defaultMarker(BitmapDescriptorFactory.HUE_RED));
+					marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.pin_red));
 				if (i == 7)
-					marker.icon(BitmapDescriptorFactory
-							.defaultMarker(BitmapDescriptorFactory.HUE_ROSE));
+					marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.pin_red));
 				if (i == 8)
-					marker.icon(BitmapDescriptorFactory
-							.defaultMarker(BitmapDescriptorFactory.HUE_VIOLET));
+					marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.pin_red));
 				if (i == 9)
-					marker.icon(BitmapDescriptorFactory
-							.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW));
+					marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.pin_red));
+					/*marker.icon(BitmapDescriptorFactory
+							.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW));*/
 
 				googleMap.addMarker(marker);
 

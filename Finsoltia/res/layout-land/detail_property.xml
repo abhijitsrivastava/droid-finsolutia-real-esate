@@ -21,7 +21,7 @@
             android:paddingTop="10dp"
             android:text="Apartment / Flat"
             android:textColor="@color/gray_battleship"
-            android:textSize="20dp" />
+            android:textSize="@dimen/subHeading" />
 
         <View
             android:layout_width="match_parent"
@@ -35,7 +35,7 @@
             android:paddingTop="10dp"
             android:text="69m2"
             android:textColor="@color/gray_battleship"
-            android:textSize="22dp" />
+            android:textSize="@dimen/heading" />
 
         <TextView
             android:id="@+id/textView_property_bedroomCount"
@@ -44,16 +44,29 @@
             android:paddingTop="10dp"
             android:text="3 Bedrooms; 1 Bathrooms;"
             android:textColor="@color/gray_battleship"
-            android:textSize="20dp" />
+            android:textSize="@dimen/text" />
 
-        <TextView
-            android:id="@+id/textView_property_cost"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:text="29.000,00 $"
-            android:textSize="36dp"
-            android:textStyle="bold" />
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/textView_property_cost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:text="29.000,00"
+                android:textSize="36dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:paddingTop="10dp"
+                android:text="@string/euro"
+                android:textSize="36dp" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/textView_property_location"
@@ -63,7 +76,7 @@
             android:paddingTop="10dp"
             android:text="Carrer Enric Borras, Prat De Llobreatm, El Barcelona, Cataluna, Espana"
             android:textColor="@color/gray_battleship"
-            android:textSize="20dp" />
+            android:textSize="@dimen/text" />
 
         <View
             android:layout_width="match_parent"
@@ -75,7 +88,7 @@
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
             android:text="About"
-            android:textSize="20dp"
+            android:textSize="@dimen/heading"
             android:textStyle="bold" />
 
         <TextView
@@ -86,7 +99,7 @@
             android:paddingTop="5dp"
             android:text="Not Available"
             android:textColor="@color/gray_battleship"
-            android:textSize="20dp" />
+            android:textSize="@dimen/subHeading" />
 
         <View
             android:layout_width="match_parent"
@@ -97,84 +110,100 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:orientation="horizontal" >
+            android:orientation="horizontal"
+            android:weightSum="2" >
 
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Use"
-                android:textColor="@color/blue_butterfly" />
+                android:textColor="@color/blue_butterfly"
+                android:textSize="@dimen/text" />
 
             <TextView
                 android:id="@+id/textView_property_use"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="Residential"
-                android:textColor="@color/gray_battleship" />
+                android:textColor="@color/gray_battleship"
+                android:textSize="@dimen/text" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:orientation="horizontal" >
+            android:orientation="horizontal"
+            android:weightSum="2" >
 
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="EnergyRating"
-                android:textColor="@color/blue_butterfly" />
+                android:textColor="@color/blue_butterfly"
+                android:textSize="@dimen/text" />
 
             <TextView
                 android:id="@+id/textView_property_energyRating"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="G"
-                android:textColor="@color/gray_battleship" />
+                android:textColor="@color/gray_battleship"
+                android:textSize="@dimen/text" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:orientation="horizontal" >
+            android:orientation="horizontal"
+            android:weightSum="2" >
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Year"
-                android:textColor="@color/blue_butterfly" />
+                android:textColor="@color/blue_butterfly"
+                android:textSize="@dimen/text" />
 
             <TextView
                 android:id="@+id/textView_property_year"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="1958"
-                android:textColor="@color/gray_battleship" />
+                android:textColor="@color/gray_battleship"
+                android:textSize="@dimen/text" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:orientation="horizontal" >
+            android:orientation="horizontal"
+            android:weightSum="2" >
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Zone"
-                android:textColor="@color/blue_butterfly" />
+                android:textColor="@color/blue_butterfly"
+                android:textSize="@dimen/text" />
 
             <TextView
                 android:id="@+id/textView_property_zone"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="Near City Center"
-                android:textColor="@color/gray_battleship" />
+                android:textColor="@color/gray_battleship"
+                android:textSize="@dimen/text" />
         </LinearLayout>
 
         <View
@@ -190,111 +219,131 @@
             android:paddingBottom="5dp"
             android:paddingTop="5dp"
             android:text="Area"
-            android:textSize="20dp"
+            android:textSize="@dimen/subHeading"
             android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal" >
+            android:orientation="horizontal"
+            android:weightSum="2" >
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Gross Built"
-                android:textColor="@color/blue_butterfly" />
+                android:textColor="@color/blue_butterfly"
+                android:textSize="@dimen/text" />
 
             <TextView
                 android:id="@+id/textView_property_grossBuilt"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="69m2"
-                android:textColor="@color/gray_battleship" />
+                android:textColor="@color/gray_battleship"
+                android:textSize="@dimen/text" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:orientation="horizontal" >
+            android:orientation="horizontal"
+            android:weightSum="2" >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Storage"
-                android:textColor="@color/blue_butterfly" />
+                android:textColor="@color/blue_butterfly"
+                android:textSize="@dimen/text" />
 
             <TextView
                 android:id="@+id/textView_property_storage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text=""
-                android:textColor="@color/gray_battleship" />
+                android:textColor="@color/gray_battleship"
+                android:textSize="@dimen/text" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:orientation="horizontal" >
+            android:orientation="horizontal"
+            android:weightSum="2" >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Total Land"
-                android:textColor="@color/blue_butterfly" />
+                android:textColor="@color/blue_butterfly"
+                android:textSize="@dimen/text" />
 
             <TextView
                 android:id="@+id/textView_property_totalLand"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text=""
-                android:textColor="@color/gray_battleship" />
+                android:textColor="@color/gray_battleship"
+                android:textSize="@dimen/text" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:orientation="horizontal" >
+            android:orientation="horizontal"
+            android:weightSum="2" >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Backyard"
-                android:textColor="@color/blue_butterfly" />
+                android:textColor="@color/blue_butterfly"
+                android:textSize="@dimen/text" />
 
             <TextView
                 android:id="@+id/textView_property_backyard"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text=""
-                android:textColor="@color/gray_battleship" />
+                android:textColor="@color/gray_battleship"
+                android:textSize="@dimen/text" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:orientation="horizontal" >
+            android:orientation="horizontal"
+            android:weightSum="2" >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Terrace"
-                android:textColor="@color/blue_butterfly" />
+                android:textColor="@color/blue_butterfly"
+                android:textSize="@dimen/text" />
 
             <TextView
                 android:id="@+id/textView_property_terrace"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text=""
-                android:textColor="@color/gray_battleship" />
+                android:textColor="@color/gray_battleship"
+                android:textSize="@dimen/text" />
         </LinearLayout>
 
         <LinearLayout
@@ -302,21 +351,25 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
             android:layout_marginTop="5dp"
-            android:orientation="horizontal" >
+            android:orientation="horizontal"
+            android:weightSum="2" >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Net Built"
-                android:textColor="@color/blue_butterfly" />
+                android:textColor="@color/blue_butterfly"
+                android:textSize="@dimen/text" />
 
             <TextView
                 android:id="@+id/textView_property_netBuilt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text=""
-                android:textColor="@color/gray_battleship" />
+                android:textColor="@color/gray_battleship"
+                android:textSize="@dimen/text" />
         </LinearLayout>
 
         <View
@@ -328,110 +381,155 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:orientation="horizontal" >
+            android:orientation="horizontal"
+            android:weightSum="2" >
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Road Access"
-                android:textColor="@color/blue_butterfly" />
+                android:textColor="@color/blue_butterfly"
+                android:textSize="@dimen/text" />
 
-            <RatingBar
-                android:id="@+id/ratingBar_property_roadAccess"
-                style="?android:attr/ratingBarStyleSmall"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:numStars="5"
-                android:rating="4" />
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <RatingBar
+                    android:id="@+id/ratingBar_property_roadAccess"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:rating="4" />
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:orientation="horizontal" >
+            android:orientation="horizontal"
+            android:weightSum="2" >
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Services"
-                android:textColor="@color/blue_butterfly" />
+                android:textColor="@color/blue_butterfly"
+                android:textSize="@dimen/text" />
 
-            <RatingBar
-                android:id="@+id/ratingBar_property_services"
-                style="?android:attr/ratingBarStyleSmall"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:numStars="5"
-                android:rating="2" />
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <RatingBar
+                    android:id="@+id/ratingBar_property_services"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:rating="2" />
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:orientation="horizontal" >
+            android:orientation="horizontal"
+            android:weightSum="2" >
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Area Condition"
-                android:textColor="@color/blue_butterfly" />
+                android:textColor="@color/blue_butterfly"
+                android:textSize="@dimen/text" />
 
-            <RatingBar
-                android:id="@+id/ratingBar_property_areaCondition"
-                style="?android:attr/ratingBarStyleSmall"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:numStars="5"
-                android:rating="4" />
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <RatingBar
+                    android:id="@+id/ratingBar_property_areaCondition"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:rating="4" />
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:orientation="horizontal" >
+            android:orientation="horizontal"
+            android:weightSum="2" >
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Noise Level"
-                android:textColor="@color/blue_butterfly" />
+                android:textColor="@color/blue_butterfly"
+                android:textSize="@dimen/text" />
 
-            <RatingBar
-                android:id="@+id/ratingBar_property_noiseLevel"
-                style="?android:attr/ratingBarStyleSmall"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:numStars="5"
-                android:rating="5" />
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <RatingBar
+                    android:id="@+id/ratingBar_property_noiseLevel"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:rating="5" />
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:orientation="horizontal" >
+            android:orientation="horizontal"
+            android:weightSum="2" >
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Public Transportation"
-                android:textColor="@color/blue_butterfly" />
+                android:textColor="@color/blue_butterfly"
+                android:textSize="@dimen/text" />
 
-            <RatingBar
-                android:id="@+id/ratingBar_property_publicTransportation"
-                style="?android:attr/ratingBarStyleSmall"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:numStars="5"
-                android:rating="3" />
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <RatingBar
+                    android:id="@+id/ratingBar_property_publicTransportation"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:rating="3" />
+            </LinearLayout>
         </LinearLayout>
 
         <View
@@ -458,14 +556,15 @@
                 android:layout_marginLeft="10dp"
                 android:layout_weight="1"
                 android:text="Get a call back"
-                android:textSize="20dp" />
+                android:textSize="@dimen/subHeading" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dp"
                 android:text=">"
-                android:textSize="20dp"
+                android:textSize="@dimen/heading"
                 android:textStyle="bold" />
         </LinearLayout>
 
