@@ -9,7 +9,7 @@
         android:id="@+id/textView1"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="#0077CC"
+        android:background="#79BAEC"
         android:gravity="center"
         android:text="Menu"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -35,6 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_marginRight="5dp"
         android:background="@android:color/transparent"
+        android:paddingLeft="10dp"
         android:drawableLeft="@android:drawable/ic_search_category_default"
         android:drawableRight="@drawable/rightarrow"
         android:gravity="left|center_vertical"
@@ -50,7 +51,7 @@
         android:drawableLeft="@drawable/globe"
         android:drawableRight="@drawable/rightarrow"
         android:gravity="left|center_vertical"
-        android:paddingLeft="5dp"
+        android:paddingLeft="20dp"
         android:text=" Map" />
 
     <Button
@@ -63,6 +64,7 @@
         android:drawableLeft="@android:drawable/btn_star"
         android:drawableRight="@drawable/rightarrow"
         android:gravity="left|center_vertical"
+        android:paddingLeft="20dp"
         android:text="Favorite" />
 
 </LinearLayout>

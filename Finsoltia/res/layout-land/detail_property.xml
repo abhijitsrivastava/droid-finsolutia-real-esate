@@ -2,15 +2,14 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:scrollbars="none"
-   
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:scrollbars="none" >
 
     <LinearLayout
         android:id="@+id/linearLayout_property_detail_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="2dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginRight="2dp"
         android:orientation="vertical" >
 
@@ -21,12 +20,13 @@
             android:paddingBottom="10dp"
             android:paddingTop="10dp"
             android:text="Apartment / Flat"
-            android:textSize="26dp" />
+            android:textColor="@color/gray_battleship"
+            android:textSize="20dp" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@android:color/white" />
+            android:background="@android:color/black" />
 
         <TextView
             android:id="@+id/textView_property_area"
@@ -34,7 +34,8 @@
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
             android:text="69m2"
-            android:textSize="26dp" />
+            android:textColor="@color/gray_battleship"
+            android:textSize="22dp" />
 
         <TextView
             android:id="@+id/textView_property_bedroomCount"
@@ -42,7 +43,8 @@
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
             android:text="3 Bedrooms; 1 Bathrooms;"
-            android:textSize="26dp" />
+            android:textColor="@color/gray_battleship"
+            android:textSize="20dp" />
 
         <TextView
             android:id="@+id/textView_property_cost"
@@ -60,19 +62,20 @@
             android:paddingBottom="10dp"
             android:paddingTop="10dp"
             android:text="Carrer Enric Borras, Prat De Llobreatm, El Barcelona, Cataluna, Espana"
+            android:textColor="@color/gray_battleship"
             android:textSize="20dp" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@android:color/white" />
+            android:background="@android:color/black" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
             android:text="About"
-            android:textSize="26dp"
+            android:textSize="20dp"
             android:textStyle="bold" />
 
         <TextView
@@ -82,12 +85,13 @@
             android:paddingBottom="10dp"
             android:paddingTop="5dp"
             android:text="Not Available"
+            android:textColor="@color/gray_battleship"
             android:textSize="20dp" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@android:color/white" />
+            android:background="@android:color/black" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -99,13 +103,15 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Use" />
+                android:text="Use"
+                android:textColor="@color/blue_butterfly" />
 
             <TextView
                 android:id="@+id/textView_property_use"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Residential" />
+                android:text="Residential"
+                android:textColor="@color/gray_battleship" />
         </LinearLayout>
 
         <LinearLayout
@@ -118,13 +124,15 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="EnergyRating" />
+                android:text="EnergyRating"
+                android:textColor="@color/blue_butterfly" />
 
             <TextView
                 android:id="@+id/textView_property_energyRating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="G" />
+                android:text="G"
+                android:textColor="@color/gray_battleship" />
         </LinearLayout>
 
         <LinearLayout
@@ -137,13 +145,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Year" />
+                android:text="Year"
+                android:textColor="@color/blue_butterfly" />
 
             <TextView
                 android:id="@+id/textView_property_year"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1958" />
+                android:text="1958"
+                android:textColor="@color/gray_battleship" />
         </LinearLayout>
 
         <LinearLayout
@@ -156,20 +166,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Zone" />
+                android:text="Zone"
+                android:textColor="@color/blue_butterfly" />
 
             <TextView
                 android:id="@+id/textView_property_zone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Near City Center" />
+                android:text="Near City Center"
+                android:textColor="@color/gray_battleship" />
         </LinearLayout>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="10dp"
-            android:background="@android:color/white" />
+            android:background="@android:color/black" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -178,7 +190,7 @@
             android:paddingBottom="5dp"
             android:paddingTop="5dp"
             android:text="Area"
-            android:textSize="26dp"
+            android:textSize="20dp"
             android:textStyle="bold" />
 
         <LinearLayout
@@ -190,13 +202,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Gross Built" />
+                android:text="Gross Built"
+                android:textColor="@color/blue_butterfly" />
 
             <TextView
                 android:id="@+id/textView_property_grossBuilt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="69m2" />
+                android:text="69m2"
+                android:textColor="@color/gray_battleship" />
         </LinearLayout>
 
         <LinearLayout
@@ -209,13 +223,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Storage" />
+                android:text="Storage"
+                android:textColor="@color/blue_butterfly" />
 
             <TextView
                 android:id="@+id/textView_property_storage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="" />
+                android:text=""
+                android:textColor="@color/gray_battleship" />
         </LinearLayout>
 
         <LinearLayout
@@ -228,13 +244,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Total Land" />
+                android:text="Total Land"
+                android:textColor="@color/blue_butterfly" />
 
             <TextView
                 android:id="@+id/textView_property_totalLand"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="" />
+                android:text=""
+                android:textColor="@color/gray_battleship" />
         </LinearLayout>
 
         <LinearLayout
@@ -247,13 +265,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Backyard" />
+                android:text="Backyard"
+                android:textColor="@color/blue_butterfly" />
 
             <TextView
                 android:id="@+id/textView_property_backyard"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="" />
+                android:text=""
+                android:textColor="@color/gray_battleship" />
         </LinearLayout>
 
         <LinearLayout
@@ -266,13 +286,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Terrace" />
+                android:text="Terrace"
+                android:textColor="@color/blue_butterfly" />
 
             <TextView
                 android:id="@+id/textView_property_terrace"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="" />
+                android:text=""
+                android:textColor="@color/gray_battleship" />
         </LinearLayout>
 
         <LinearLayout
@@ -286,19 +308,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Net Built" />
+                android:text="Net Built"
+                android:textColor="@color/blue_butterfly" />
 
             <TextView
                 android:id="@+id/textView_property_netBuilt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="" />
+                android:text=""
+                android:textColor="@color/gray_battleship" />
         </LinearLayout>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@android:color/white" />
+            android:background="@android:color/black" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -310,7 +334,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Road Access" />
+                android:text="Road Access"
+                android:textColor="@color/blue_butterfly" />
 
             <RatingBar
                 android:id="@+id/ratingBar_property_roadAccess"
@@ -331,7 +356,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Services" />
+                android:text="Services"
+                android:textColor="@color/blue_butterfly" />
 
             <RatingBar
                 android:id="@+id/ratingBar_property_services"
@@ -352,7 +378,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Area Condition" />
+                android:text="Area Condition"
+                android:textColor="@color/blue_butterfly" />
 
             <RatingBar
                 android:id="@+id/ratingBar_property_areaCondition"
@@ -373,7 +400,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Noise Level" />
+                android:text="Noise Level"
+                android:textColor="@color/blue_butterfly" />
 
             <RatingBar
                 android:id="@+id/ratingBar_property_noiseLevel"
@@ -394,7 +422,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Public Transportation" />
+                android:text="Public Transportation"
+                android:textColor="@color/blue_butterfly" />
 
             <RatingBar
                 android:id="@+id/ratingBar_property_publicTransportation"
@@ -409,7 +438,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="10dp"
-            android:background="@android:color/white" />
+            android:background="@android:color/black" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -425,9 +454,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="10dp"
+                android:layout_weight="1"
                 android:text="Get a call back"
                 android:textSize="20dp" />
 

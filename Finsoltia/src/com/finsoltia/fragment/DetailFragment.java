@@ -51,8 +51,8 @@ public class DetailFragment extends Fragment {
 			initilizeMap();
 
 			// Changing map type
-			googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-			// googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+			// googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+			googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
 			// googleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
 			// googleMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
 			// googleMap.setMapType(GoogleMap.MAP_TYPE_NONE);
@@ -75,8 +75,8 @@ public class DetailFragment extends Fragment {
 			// Enable / Disable zooming functionality
 			googleMap.getUiSettings().setZoomGesturesEnabled(true);
 
-			double latitude = 28.6100;
-			double longitude = 77.2300;
+			double latitude = 40.416044;
+			double longitude = -3.709091;
 
 			// lets place some 10 random markers
 			for (int i = 0; i < 10; i++) {
@@ -178,8 +178,8 @@ public class DetailFragment extends Fragment {
 	 */
 	private double[] createRandLocation(double latitude, double longitude) {
 
-		return new double[] { latitude + ((Math.random() - 0.5) / 500),
-				longitude + ((Math.random() - 0.5) / 500),
-				150 + ((Math.random() - 0.5) * 10) };
+		return new double[] { latitude + ((Math.random() - 0.8) / 100),
+				longitude + ((Math.random() - 0.8) / 100),
+				500 + ((Math.random() - 0.5) * 20) };
 	}
 }
