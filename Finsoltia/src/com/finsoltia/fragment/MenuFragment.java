@@ -33,7 +33,7 @@ public class MenuFragment extends Fragment {
 
 			@Override
 			public void onClick(View v) {
-
+				homeActivity.commitFragment(R.id.mainContainer, new HomeFragment(), "home", "Home Screen");
 			}
 		});
 		Button map = (Button) menuFragment.findViewById(R.id.map);
@@ -41,9 +41,9 @@ public class MenuFragment extends Fragment {
 
 			@Override
 			public void onClick(View v) {
-				homeActivity.currentTab = "map";
+				/*homeActivity.currentTab = "map";
 				homeActivity.commitFragment(R.id.mainContainer,
-						new MenuFragment(), "map", null);
+						new MenuFragment(), "map", null);*/
 
 			}
 		});
