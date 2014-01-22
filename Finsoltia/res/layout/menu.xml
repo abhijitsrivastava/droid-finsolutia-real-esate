@@ -28,6 +28,7 @@
         android:background="@android:color/darker_gray" />
 
     <LinearLayout
+        android:id="@+id/searchContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
@@ -57,6 +58,7 @@
         android:background="@android:color/darker_gray" />
 
     <LinearLayout
+        android:id="@+id/mapContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
@@ -87,6 +89,7 @@
         android:background="@android:color/darker_gray" />
 
     <LinearLayout
+        android:id="@+id/favoriteContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
