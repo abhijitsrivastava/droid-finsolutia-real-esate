@@ -1,0 +1,28 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+<item
+        android:id="@+id/back"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="Back"/>
+<item
+        android:id="@+id/backTitle"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="Backtitle"/>
+<item
+        android:id="@+id/mainTitle"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+
+        android:title="Maintitle"/>
+<item
+        android:id="@+id/favorite"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="Favorite"/>
+<item
+        android:id="@+id/share"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="Share"/>
+</menu>
