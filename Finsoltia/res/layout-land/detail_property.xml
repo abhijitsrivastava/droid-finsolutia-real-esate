@@ -142,7 +142,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="EnergyRating"
+                android:text="Energy rating"
                 android:textColor="@color/blue_butterfly"
                 android:textSize="@dimen/text" />
 
@@ -232,7 +232,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Gross Built"
+                android:text="Gross built"
                 android:textColor="@color/blue_butterfly"
                 android:textSize="@dimen/text" />
 
@@ -282,7 +282,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Total Land"
+                android:text="Total land"
                 android:textColor="@color/blue_butterfly"
                 android:textSize="@dimen/text" />
 
@@ -358,7 +358,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Net Built"
+                android:text="Net built"
                 android:textColor="@color/blue_butterfly"
                 android:textSize="@dimen/text" />
 
@@ -388,7 +388,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Road Access"
+                android:text="Road access"
                 android:textColor="@color/blue_butterfly"
                 android:textSize="@dimen/text" />
 
@@ -450,7 +450,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Area Condition"
+                android:text="Area condition"
                 android:textColor="@color/blue_butterfly"
                 android:textSize="@dimen/text" />
 
@@ -481,7 +481,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Noise Level"
+                android:text="Noise level"
                 android:textColor="@color/blue_butterfly"
                 android:textSize="@dimen/text" />
 
@@ -512,7 +512,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Public Transportation"
+                android:text="Public transportation"
                 android:textColor="@color/blue_butterfly"
                 android:textSize="@dimen/text" />
 

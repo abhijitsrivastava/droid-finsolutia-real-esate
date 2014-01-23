@@ -30,7 +30,7 @@ public class MenuFragment extends Fragment {
 	public void onResume() {
 
 		super.onResume();
-		searchContainer=(LinearLayout)menuFragment.findViewById(R.id.mainContainer);
+		searchContainer=(LinearLayout)menuFragment.findViewById(R.id.searchContainer);
 		mapContainer=(LinearLayout)menuFragment.findViewById(R.id.mapContainer);
 		favoriteContainer=(LinearLayout)menuFragment.findViewById(R.id.favoriteContainer);
 				
@@ -39,10 +39,10 @@ public class MenuFragment extends Fragment {
 
 			@Override
 			public void onClick(View v) {
-				searchContainer.setBackgroundColor(Color.GRAY);
-				mapContainer.setBackgroundColor(Color.TRANSPARENT);
-				favoriteContainer.setBackgroundColor(Color.TRANSPARENT);
-				homeActivity.commitFragment(R.id.mainContainer, new HomeFragment(), "home", "Home Screen");
+				searchContainer.setBackgroundResource(R.color.gray);
+				mapContainer.setBackgroundResource(R.color.white);
+				favoriteContainer.setBackgroundResource(R.color.white);
+				homeActivity.commitFragment(R.id.mainContainer, new DetailFragment(), "home", "Home Screen");
 			}
 		});
 		Button map = (Button) menuFragment.findViewById(R.id.map);
@@ -50,9 +50,9 @@ public class MenuFragment extends Fragment {
 
 			@Override
 			public void onClick(View v) {
-				mapContainer.setBackgroundColor(Color.GRAY);
-				favoriteContainer.setBackgroundColor(Color.TRANSPARENT);
-				searchContainer.setBackgroundColor(Color.TRANSPARENT);
+				mapContainer.setBackgroundResource(R.color.gray);
+				favoriteContainer.setBackgroundResource(R.color.white);
+				searchContainer.setBackgroundResource(R.color.white);
 				/*homeActivity.currentTab = "map";
 				homeActivity.commitFragment(R.id.mainContainer,
 						new MenuFragment(), "map", null);*/
@@ -64,9 +64,9 @@ public class MenuFragment extends Fragment {
 
 			@Override
 			public void onClick(View v) {
-				favoriteContainer.setBackgroundColor(Color.GRAY);
-				mapContainer.setBackgroundColor(Color.TRANSPARENT);
-				searchContainer.setBackgroundColor(Color.TRANSPARENT);
+				favoriteContainer.setBackgroundResource(R.color.gray);
+				mapContainer.setBackgroundResource(R.color.white);
+				searchContainer.setBackgroundResource(R.color.white);
 				homeActivity.currentTab = "favorite";
 				homeActivity.commitFragment(R.id.mainContainer,
 						new favoriteFragment(), "favorite", null);

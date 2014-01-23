@@ -22,21 +22,21 @@
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/im_6" />
+            android:src="@drawable/im_2" />
 
         <ImageView
             android:id="@+id/imageView4"
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/im_4" />
+            android:src="@drawable/im_6" />
 
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="match_parent"
            android:layout_height="250dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/im_2" />
+            android:src="@drawable/im_4" />
 
     </LinearLayout>
 

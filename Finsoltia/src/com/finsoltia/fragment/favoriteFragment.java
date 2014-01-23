@@ -20,19 +20,9 @@ public class favoriteFragment extends Fragment {
 			Bundle savedInstanceState) {
 		View menuFragment = inflater.inflate(R.layout.favorite_fragment,
 				container, false);
-		Button favoritebutton = (Button) menuFragment
-				.findViewById(R.id.favoritebutton);
-		favoritebutton.setOnClickListener(new OnClickListener() {
+		
 
-			@Override
-			public void onClick(View v) {
-				mainactivity.commitFragment(R.id.mainContainer,
-						new MenuFragment(), mainactivity.currentTab, null);
-
-			}
-		});
-
-		setHasOptionsMenu(true);
+	
 		return menuFragment;
 	}
 

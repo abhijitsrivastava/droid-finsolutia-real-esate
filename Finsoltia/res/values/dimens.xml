@@ -8,5 +8,6 @@
     <dimen name="heading">22dp</dimen>
     <dimen name="subHeading">18dp</dimen>
     <dimen name="text">16dp</dimen>
+    <dimen name="menu_font_size">22dp</dimen>
 
 </resources>
