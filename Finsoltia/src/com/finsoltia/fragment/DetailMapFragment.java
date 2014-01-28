@@ -1,48 +1,43 @@
 package com.finsoltia.fragment;
 
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.ScrollView;
+import android.widget.Button;
 import android.widget.Toast;
 
+import com.finsoltia.HomeActivity;
 import com.finsoltia.R;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.GoogleMapOptions;
 import com.google.android.gms.maps.MapFragment;
-import com.google.android.gms.maps.MapView;
-import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class DetailFragment extends Fragment {
-
-	private static View detailFragment = null;
-	
+public class DetailMapFragment extends Fragment {
+private static 	View detailMapFragment;
 	private GoogleMap googleMap;
-	MapFragment mapFragment;
-	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		
-		  
-		    
-		    	detailFragment = inflater.inflate(R.layout.detail_property, container, false);
-		    	int status = GooglePlayServicesUtil
+		
+		
+		
+	
+				detailMapFragment = inflater.inflate(R.layout.detail_map_fragment,
+						container, false);
+				int status = GooglePlayServicesUtil
 						.isGooglePlayServicesAvailable(getActivity());
 
 				// Check Google Play Service Available
@@ -62,9 +57,7 @@ public class DetailFragment extends Fragment {
 					// Changing map type
 					// googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 					 googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-					 /* googleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
-					 googleMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);*/
-					// googleMap.setMapType(GoogleMap.MAP_TYPE_NONE);
+					
 
 					// Showing / hiding your current location
 					googleMap.setMyLocationEnabled(true);
@@ -142,69 +135,27 @@ public class DetailFragment extends Fragment {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-		    
-
-
-		return detailFragment;
-	}
-
-	@Override
-	public void onPause() {
-		Toast.makeText(getActivity(), "onPause",
-				Toast.LENGTH_SHORT).show();
-		super.onPause();
-	//	mMapView.onPause();
-	}
-
-	@Override
-	public void onResume() {
-		super.onResume();
-		Toast.makeText(getActivity(), "resume", 1).show();
-	     initilizeMap();
-		final ScrollView mainScrollView = (ScrollView) detailFragment.findViewById(R.id.main_scrollview);
-		ImageView transparentImageView = (ImageView) detailFragment.findViewById(R.id.transparent_image);
-
-		transparentImageView.setOnTouchListener(new View.OnTouchListener() {
-
-		    @Override
-		    public boolean onTouch(View v, MotionEvent event) {
-		        int action = event.getAction();
-		        switch (action) {
-		           case MotionEvent.ACTION_DOWN:
-		                // Disallow ScrollView to intercept touch events.
-		        	   mainScrollView.requestDisallowInterceptTouchEvent(true);
-		                // Disable touch on transparent view
-		                return false;
-
-		           case MotionEvent.ACTION_UP:
-		                // Allow ScrollView to intercept touch events.
-		                mainScrollView.requestDisallowInterceptTouchEvent(false);
-		                return true;
-
-		           case MotionEvent.ACTION_MOVE:
-		                mainScrollView.requestDisallowInterceptTouchEvent(true);
-		                return false;
-
-		           default: 
-		                return true;
-		        }   
-		    }
-
 			
-		});
 		
+		
+
+		return detailMapFragment;
 	}
 
-	/**
-	 * function to load map If map is not created it will create it for you
-	 * */
-	private void initilizeMap(/*Bundle savedInstanceState*/) {
+	@Override
+	public void onAttach(Activity activity) {
+		
+		
+		super.onAttach(activity);
+	}
+	
+	
+	private void initilizeMap() {
 		if (googleMap == null) {
 			
-		 mapFragment=(MapFragment) getActivity().getFragmentManager().findFragmentById(
-				R.id.map1);
-		  
-	       
+		MapFragment mapFragment=(MapFragment) getActivity().getFragmentManager().findFragmentById(
+				R.id.detailMap);
+		
 		googleMap=mapFragment.getMap();
 		googleMap.setInfoWindowAdapter(new IconizedWindowAdapter(
                 getActivity().getLayoutInflater()));
@@ -216,35 +167,20 @@ public class DetailFragment extends Fragment {
 				Toast.makeText(getActivity(), "Sorry! unable to create maps",
 						Toast.LENGTH_SHORT).show();
 			}
-			//removeMapView.removeMap(mMapView,googleMap);
 		}
 	}
-
-	/*
-	 * creating random postion around a location for testing purpose only
-	 */
 	private double[] createRandLocation(double latitude, double longitude) {
 
 		return new double[] { latitude + ((Math.random() - 0.8) / 100),
 				longitude + ((Math.random() - 0.8) / 100),
 				500 + ((Math.random() - 0.5) * 20) };
 	}
-	 
-	   
-
-	  
-	 @Override
-	public void onAttach(Activity activity) {
-		
-		super.onAttach(activity);
-	
-		
+	@Override
+	public void onResume() {
+		initilizeMap();
+		super.onResume();
 	}
 
-	
 
 	
-
-	
-	 
 }

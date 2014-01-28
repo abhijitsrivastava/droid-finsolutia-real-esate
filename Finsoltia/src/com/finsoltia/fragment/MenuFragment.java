@@ -1,9 +1,10 @@
 package com.finsoltia.fragment;
 
 import android.app.Activity;
-import android.app.Fragment;
+
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -19,6 +20,7 @@ public class MenuFragment extends Fragment {
 	View menuFragment;
 	HomeActivity homeActivity;
     LinearLayout searchContainer,mapContainer,favoriteContainer;
+    MenuClickListioner menuClickListioner;
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -42,7 +44,8 @@ public class MenuFragment extends Fragment {
 				searchContainer.setBackgroundResource(R.color.gray);
 				mapContainer.setBackgroundResource(R.color.white);
 				favoriteContainer.setBackgroundResource(R.color.white);
-				homeActivity.commitFragment(R.id.mainContainer, new DetailFragment(), "home", "Home Screen");
+				menuClickListioner.onMenuClicked(0);
+				
 			}
 		});
 		Button map = (Button) menuFragment.findViewById(R.id.map);
@@ -53,10 +56,7 @@ public class MenuFragment extends Fragment {
 				mapContainer.setBackgroundResource(R.color.gray);
 				favoriteContainer.setBackgroundResource(R.color.white);
 				searchContainer.setBackgroundResource(R.color.white);
-				/*homeActivity.currentTab = "map";
-				homeActivity.commitFragment(R.id.mainContainer,
-						new MenuFragment(), "map", null);*/
-
+				menuClickListioner.onMenuClicked(1);
 			}
 		});
 		Button favorite = (Button) menuFragment.findViewById(R.id.favorite);
@@ -67,16 +67,20 @@ public class MenuFragment extends Fragment {
 				favoriteContainer.setBackgroundResource(R.color.gray);
 				mapContainer.setBackgroundResource(R.color.white);
 				searchContainer.setBackgroundResource(R.color.white);
-				homeActivity.currentTab = "favorite";
-				homeActivity.commitFragment(R.id.mainContainer,
-						new favoriteFragment(), "favorite", null);
+				menuClickListioner.onMenuClicked(2);
+				
 			}
 		});
 	}
 
 	@Override
 	public void onAttach(Activity activity) {
-		homeActivity = (HomeActivity) activity;
+		menuClickListioner=(MenuClickListioner) activity;
 		super.onAttach(activity);
+	}
+	
+	public interface MenuClickListioner {
+		public void onMenuClicked(int index);
+
 	}
 }

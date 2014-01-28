@@ -1,71 +1,77 @@
 package com.finsoltia;
 
 
-import android.app.ActionBar;
-import android.app.Activity;
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
-import android.content.Context;
 import android.os.Bundle;
-import android.view.LayoutInflater;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTabHost;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
-import android.widget.Toast;
+import android.widget.FrameLayout;
 
-import com.finsoltia.fragment.DetailFragment;
+import com.finsoltia.fragment.FavoriteFragment;
+import com.finsoltia.fragment.FavoriteFragment.HandleFavoriteFragment;
+import com.finsoltia.fragment.MenuFragment;
+import com.finsoltia.fragment.MenuFragment.MenuClickListioner;
+import com.finsoltia.fragment.MyMapFragment;
+import com.finsoltia.fragment.MyMapFragment.HandleMapFragment;
+import com.finsoltia.fragment.SearchFragment;
+import com.finsoltia.fragment.SearchFragment.HandlSeachFragment;
 
-public class HomeActivity extends Activity {
-	ActionBar actionBar;
-	public Button share, back, favorite;
-	public String currentTab;
 
+
+public class HomeActivity extends FragmentActivity implements
+		MenuClickListioner, HandleFavoriteFragment, HandleMapFragment,
+		HandlSeachFragment{
+	public int currentTab;
+	
+ private FragmentTabHost mTabHost;
+	public FragmentManager favoriteFragmentManager,searchFragmentManager,mapFragmentManager;
+	FrameLayout search,map,favorite;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.home);
-		DetailFragment homeFragment = new DetailFragment();
-		commitFragment(R.id.mainContainer, homeFragment, "home", "Home Screen");
-		share = (Button) findViewById(R.id.share);
-		back = (Button) findViewById(R.id.back);
-		favorite = (Button) findViewById(R.id.favorite);
-		// setActionbar();
+		
+		setContentView(R.layout.activity_main);
+		currentTab=0;
+		initialCommitFragment(R.id.fragment0, new MenuFragment());
+		/*search=(FrameLayout)findViewById(R.id.fragment1);
+		map=(FrameLayout)findViewById(R.id.fragment2);
+		favorite=(FrameLayout)findViewById(R.id.fragment3);*/
+		
+	/*	map.setVisibility(View.GONE);
+		favorite.setVisibility(View.GONE);*/
+		
+		initialCommitFragment(R.id.fragment0, new MenuFragment());
+		    mTabHost = (FragmentTabHost)findViewById(android.R.id.tabhost);
+	        mTabHost.setup(this, getSupportFragmentManager(), R.id.realtabcontent);
 
+	        mTabHost.addTab(mTabHost.newTabSpec("simple").setIndicator("Simple"),
+	                SearchFragment.class, null);
+	        mTabHost.addTab(mTabHost.newTabSpec("contacts").setIndicator("Contacts"),
+	                MyMapFragment.class, null);
+	        mTabHost.addTab(mTabHost.newTabSpec("custom").setIndicator("Custom"),
+	                FavoriteFragment.class, null);
+	        mTabHost.getTabWidget().getChildAt(0).setVisibility(View.GONE);
+	        mTabHost.getTabWidget().getChildAt(1).setVisibility(View.GONE);
+	        mTabHost.getTabWidget().getChildAt(2).setVisibility(View.GONE);
+		/*initialCommitFragment(R.id.fragment1, new SearchFragment());
+		initialCommitFragment(R.id.fragment2, new MyMapFragment());
+		initialCommitFragment(R.id.fragment3, new FavoriteFragment());*/
+		 
 	}
 
-	private void setActionbar() {
-		ActionBar actionBar = getActionBar();
-		actionBar.setHomeButtonEnabled(true);
-		actionBar.setDisplayShowHomeEnabled(true);
-		actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-		LayoutInflater inflator = (LayoutInflater) this
-				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		View v = inflator.inflate(R.layout.actionbar, null);
-		share = (Button) v.findViewById(R.id.share);
-		back = (Button) v.findViewById(R.id.back);
-		favorite = (Button) v.findViewById(R.id.favorite);
-		actionBar.setCustomView(v);
-		back.setOnClickListener(new OnClickListener() {
 
-			@Override
-			public void onClick(View v) {
-				Toast.makeText(getApplicationContext(), currentTab, 1).show();
-				popFragment(currentTab);
-			}
-		});
-	}
 
-	public void commitFragment(int containerId, Fragment fragment,
-			String addTobackstack, String title) {
+	public void initialCommitFragment(int containerId, Fragment fragment) {
 
 		try {
-			FragmentTransaction fragmentTransaction = getFragmentManager()
+		
+			FragmentTransaction fragmentTransaction =getSupportFragmentManager()
 					.beginTransaction();
-			fragmentTransaction.replace(containerId, fragment);
-			if (addTobackstack != null) {
-				fragmentTransaction.addToBackStack(addTobackstack);
-			}
+			fragmentTransaction.add(containerId, fragment);
 			fragmentTransaction.commit();
 		} catch (Exception e) {
 
@@ -73,10 +79,85 @@ public class HomeActivity extends Activity {
 		}
 	}
 
-	public void popFragment(String name) {
-		FragmentManager fm = getFragmentManager();
-		fm.popBackStack(currentTab, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+
+
+	@Override
+	public void onMenuClicked(int index) {
+		currentTab=index;
+		mTabHost.setCurrentTab(index);
+		
+	}
+
+	public void commitFragment(Fragment fragment,int Tab) {
+		FragmentTransaction ft;
+		switch (Tab) {
+		case SearchFragment.TAB_ID:
+			ft = searchFragmentManager.beginTransaction();
+			ft.replace(R.id.searchContainer, fragment);
+			ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+			ft.addToBackStack(null);
+			ft.commit();
+			break;
+		case MyMapFragment.TAB_ID:
+			ft = mapFragmentManager.beginTransaction();
+			ft.replace(R.id.mapContainer, fragment);
+			ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+			ft.addToBackStack(null);
+			ft.commit();
+			break;
+		case 2:
+			ft = favoriteFragmentManager.beginTransaction();
+			ft.replace(R.id.favoriteContainer, fragment);
+			ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+			ft.addToBackStack(null);
+			ft.commit();
+			break;
+		default:
+			break;
+		}
 
 	}
 
+	public void popFragment() {
+		switch (currentTab) {
+		case 0:
+			searchFragmentManager.popBackStack();
+
+			break;
+		case 1:
+			mapFragmentManager.popBackStack();
+
+			break;
+		case 2:
+			favoriteFragmentManager.popBackStack();
+
+			break;
+		default:
+			break;
+		}
+		
+	}
+
+
+	@Override
+	public void setupSeachPush(FragmentManager fragmentManager) {
+		searchFragmentManager=fragmentManager;
+		
+	}
+
+	@Override
+	public void setupMapPush(FragmentManager fragmentManager) {
+		mapFragmentManager=fragmentManager;
+		
+	}
+	@Override
+	public void setupFavoritePush(FragmentManager fragmentManager) {
+		favoriteFragmentManager=fragmentManager;
+		
+	}
+
+
+
+	
+	
 }
