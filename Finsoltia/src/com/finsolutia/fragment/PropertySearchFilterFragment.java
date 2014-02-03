@@ -26,16 +26,44 @@ Button buttonAny,buttonNearMe;
 ListView listViewFilterContainer;
 ArrayAdapter<String> adapter;
 EditText edittextSearch;
-private static final String[] FILTERS = new String[] { "Apartment/ Flat",
+private   String[] FILTERS ;
+
+String [] lookingFor=new String[] { "Apartment/ Flat",
 	    "Detached House", "Garage", "Storage", "Store",
 	    "Terranced House", "Urban Land" };
+String [] where = {"Espane","Portugal"};
+String [] district = {"Andalucia","Belears, Illes","Castilla - La Mancha","Cataluna","Comunitat Valenciana","Madrid, Comunidad de","Region De Murcia"};
+String [] county = {"Madrid"};
+String [] parish = {"Madrid","Rozas De Madrid, Las","Tielmes","Valdemoro"};
+
+
+ private int filterType;
 @Override
 	public void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
+		
 		super.onCreate(savedInstanceState);
-		if (savedInstanceState==null) {
-			
+		filterType=getArguments().getInt("filterType");
+		switch (filterType) {
+		case 0:
+			FILTERS=lookingFor;
+			break;
+		case 1:
+			FILTERS=where;
+			break;
+		case 2:
+			FILTERS=district;
+			break;
+		case 3:
+			FILTERS=county;
+			break;
+		case 4:
+			FILTERS=parish;
+			break;
+
+		default:
+			break;
 		}
+		
 		
 	}
     @Override
@@ -100,6 +128,9 @@ private static final String[] FILTERS = new String[] { "Apartment/ Flat",
 					@Override
 					public void onItemClick(AdapterView<?> arg0, View arg1,
 							int arg2, long arg3) {
+						
+						homeActivity.listMap.put(filterType, FILTERS[arg2]);
+						
 						homeActivity.popFragment();
 
 					}

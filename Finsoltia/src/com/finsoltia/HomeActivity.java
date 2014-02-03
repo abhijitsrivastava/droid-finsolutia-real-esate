@@ -1,6 +1,12 @@
 package com.finsoltia;
 
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import android.R.integer;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -9,6 +15,7 @@ import android.support.v4.app.FragmentTabHost;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import com.finsolutia.fragment.FavoriteContainerFragment;
 import com.finsolutia.fragment.FavoriteContainerFragment.HandleFavoriteFragment;
@@ -24,11 +31,12 @@ import com.finsolutia.fragment.SearchContainerFragment.HandleSeachFragment;
 public class HomeActivity extends FragmentActivity implements
 		MenuClickListioner, HandleFavoriteFragment, HandleMapFragment,
 		HandleSeachFragment{
-	public int currentTab;
-	
+ public int currentTab;
+ public Map<Integer, String> listMap=new HashMap<Integer, String>();
+
  private FragmentTabHost mTabHost;
-	public FragmentManager favoriteFragmentManager,searchFragmentManager,mapFragmentManager;
-	FrameLayout search,map,favorite;
+ public FragmentManager favoriteFragmentManager,searchFragmentManager,mapFragmentManager;
+ FrameLayout search,map,favorite;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +44,8 @@ public class HomeActivity extends FragmentActivity implements
 		
 		setContentView(R.layout.activity_main);
 		currentTab=0;
+		Toast.makeText(getApplicationContext(), "oncreate", 1).show();
+		
 		initialCommitFragment(R.id.fragment0, new MenuFragment());
 		/*search=(FrameLayout)findViewById(R.id.fragment1);
 		map=(FrameLayout)findViewById(R.id.fragment2);
