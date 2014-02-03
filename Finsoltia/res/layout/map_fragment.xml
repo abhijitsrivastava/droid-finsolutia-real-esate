@@ -11,14 +11,6 @@
         android:background="@drawable/header"
         android:orientation="horizontal" >
 
-        <Button
-            android:id="@+id/buttonClear"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:background="@drawable/search_icon_black" />
-
         <TextView
             android:id="@+id/textViewHeaderTitle"
             android:layout_width="wrap_content"
@@ -28,6 +20,14 @@
             android:text="Map"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/buttonSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/search_icon_black" />
     </RelativeLayout>
 
     <FrameLayout
