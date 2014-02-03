@@ -15,8 +15,8 @@
             android:id="@+id/searchContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
-            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/rounded_edit_text_white"
             android:gravity="center_vertical" >
@@ -26,7 +26,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="5dp"
-              
                 android:layout_marginTop="2dp"
                 android:src="@drawable/search" />
 
@@ -54,10 +53,10 @@
             android:id="@+id/buttonAny"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
-            android:layout_marginRight="@dimen/activity_horizontal_margin"
-            android:drawableRight="@drawable/rightarrow"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:background="@android:color/transparent"
+            android:drawableRight="@drawable/rightarrow"
             android:gravity="center_vertical"
             android:text="Any" />
 
@@ -65,12 +64,12 @@
             android:id="@+id/buttonNearMe"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
-            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@android:color/transparent"
             android:drawableRight="@drawable/rightarrow"
-            android:drawableTop="@drawable/separator_horizontal"
+            android:drawableTop="@drawable/separator_horizontal_grey"
             android:gravity="center_vertical"
-             android:background="@android:color/transparent"
             android:text="Near me" />
     </LinearLayout>
 

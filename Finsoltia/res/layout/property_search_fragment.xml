@@ -14,6 +14,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
             android:gravity="right"
             android:orientation="horizontal" >
 
@@ -42,6 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
+            android:layout_marginRight="10dp"
             android:text="39,000.00 $"
             android:textSize="@dimen/heading" />
 
@@ -51,6 +53,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
+            android:layout_marginRight="10dp"
             android:text="6 km, Berga , Barcelona"
             android:textSize="@dimen/subHeading" />
     </LinearLayout>
@@ -66,121 +69,219 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
             android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
             android:orientation="vertical" >
 
-           
-
-            <Button
-                android:id="@+id/buttonLookingFor"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableRight="@drawable/rightarrow"
-                android:gravity="left|center_vertical"
-                android:text="Looking for ..." />
+                android:background="@drawable/rounded_edit_text_gray"
+                android:orientation="vertical" >
 
-            <Button
-                android:id="@+id/buttonWhere"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableRight="@drawable/rightarrow"
-                android:gravity="left|center_vertical"
-                android:text="Where" />
+                <Button
+                    android:id="@+id/buttonLookingFor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@android:color/transparent"
+                    android:drawableRight="@drawable/rightarrow"
+                    android:gravity="left|center_vertical"
+                    android:text="Looking for ..." />
 
-            <Button
-                android:id="@+id/buttonDistrict"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableRight="@drawable/rightarrow"
-                android:gravity="left|center_vertical"
-                android:text="District" />
+                <Button
+                    android:id="@+id/buttonWhere"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@android:color/transparent"
+                    android:drawableRight="@drawable/rightarrow"
+                    android:drawableTop="@drawable/separator_horizontal_white"
+                    android:gravity="left|center_vertical"
+                    android:text="Where" />
 
-            <Button
-                android:id="@+id/buttonCounty"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableRight="@drawable/rightarrow"
-                android:gravity="left|center_vertical"
-                android:text="County?" />
+                <Button
+                    android:id="@+id/buttonDistrict"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@android:color/transparent"
+                    android:drawableRight="@drawable/rightarrow"
+                    android:drawableTop="@drawable/separator_horizontal_white"
+                    android:gravity="left|center_vertical"
+                    android:text="District" />
 
-            <Button
-                android:id="@+id/buttonParish"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableRight="@drawable/rightarrow"
-                android:gravity="left|center_vertical"
-                android:text="Parish?" />
+                <Button
+                    android:id="@+id/buttonCounty"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@android:color/transparent"
+                    android:drawableRight="@drawable/rightarrow"
+                    android:drawableTop="@drawable/separator_horizontal_white"
+                    android:gravity="left|center_vertical"
+                    android:text="County?" />
 
-            <Button
-                android:id="@+id/buttonMoreOption"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:drawableRight="@drawable/rightarrow"
-                android:gravity="left|center_vertical"
-                android:text="More options" />
+                <Button
+                    android:id="@+id/buttonParish"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@android:color/transparent"
+                    android:drawableRight="@drawable/rightarrow"
+                    android:drawableTop="@drawable/separator_horizontal_white"
+                    android:gravity="left|center_vertical"
+                    android:text="Parish?" />
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/textviewBedrooms"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:text="Bedrooms"
-                android:textSize="@dimen/subHeading"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/buttonBedroomsFrom"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:drawableRight="@drawable/rightarrow"
-                android:gravity="left|center_vertical"
-                android:text="From" />
-
-            <Button
-                android:id="@+id/buttonBedroomsTo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableRight="@drawable/rightarrow"
-                android:gravity="left|center_vertical"
-                android:text="To" />
-
-            <TextView
-                android:id="@+id/textviewPriceRange"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:text="Price range"
-                android:textSize="@dimen/subHeading"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/buttonPriceMin"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:drawableRight="@drawable/rightarrow"
-                android:gravity="left|center_vertical"
-                android:text="Min" />
+                android:background="@drawable/rounded_edit_text_gray"
+                android:orientation="vertical" >
 
-            <Button
-                android:id="@+id/buttonPriceMax"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableRight="@drawable/rightarrow"
-                android:gravity="left|center_vertical"
-                android:text="Max" />
+                <Button
+                    android:id="@+id/buttonMoreOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@android:color/transparent"
+                    android:drawableRight="@drawable/rightarrow"
+                    android:gravity="left|center_vertical"
+                    android:text="More options" />
+            </LinearLayout>
 
-            <Button
-                android:id="@+id/buttonSearch"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:drawableRight="@drawable/search"
-                android:gravity="right|center_vertical"
-                android:text="Searchs" />
+                android:background="@drawable/rounded_edit_text_gray"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/textviewBedrooms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Bedrooms"
+                    android:textSize="@dimen/subHeading"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:background="@drawable/rounded_edit_text_gray"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/buttonBedroomsFrom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@android:color/transparent"
+                    android:drawableRight="@drawable/rightarrow"
+                    android:gravity="left|center_vertical"
+                    android:text="From" />
+
+                <Button
+                    android:id="@+id/buttonBedroomsTo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@android:color/transparent"
+                    android:drawableRight="@drawable/rightarrow"
+                    android:drawableTop="@drawable/separator_horizontal_white"
+                    android:gravity="left|center_vertical"
+                    android:text="To" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:background="@drawable/rounded_edit_text_gray"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/textviewPriceRange"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Price range"
+                    android:textSize="@dimen/subHeading"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:background="@drawable/rounded_edit_text_gray"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/buttonPriceMin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@android:color/transparent"
+                    android:drawableRight="@drawable/rightarrow"
+                    android:gravity="left|center_vertical"
+                    android:text="Min" />
+
+                <Button
+                    android:id="@+id/buttonPriceMax"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@android:color/transparent"
+                    android:drawableRight="@drawable/rightarrow"
+                    android:drawableTop="@drawable/separator_horizontal_white"
+                    android:gravity="left|center_vertical"
+                    android:text="Max" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:background="@drawable/rounded_background_blue"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/buttonSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@android:color/transparent"
+                    android:drawableRight="@drawable/search"
+                    android:gravity="right|center_vertical"
+                    android:text="Search" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:orientation="vertical" />
         </LinearLayout>
     </ScrollView>
 
