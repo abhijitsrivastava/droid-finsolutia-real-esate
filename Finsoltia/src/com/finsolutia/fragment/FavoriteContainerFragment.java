@@ -16,8 +16,6 @@ import com.finsoltia.R;
 public class FavoriteContainerFragment extends BaseFragment {
 	HandleFavoriteFragment handleFavoriteFragment;
 	
-	private static final int TAB_ID=3;
-
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {

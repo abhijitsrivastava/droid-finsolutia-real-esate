@@ -42,7 +42,7 @@ private void setUi() {
 		
 		@Override
 		public void onClick(View v) {
-			
+			startFragmentForResult();
 			
 		}
 	});
@@ -53,7 +53,7 @@ private void setUi() {
 		@Override
 		public void onClick(View v) {
 			
-			
+			startFragmentForResult();	
 		}
 	});
 	
@@ -63,7 +63,7 @@ private void setUi() {
 		@Override
 		public void onClick(View v) {
 			
-			
+			startFragmentForResult();
 		}
 	});
 	
@@ -72,7 +72,7 @@ private void setUi() {
 		
 		@Override
 		public void onClick(View v) {
-			
+			startFragmentForResult();
 			
 		}
 	});
@@ -82,7 +82,7 @@ private void setUi() {
 		
 		@Override
 		public void onClick(View v) {
-			
+			startFragmentForResult();
 			
 		}
 	});
@@ -93,7 +93,7 @@ private void setUi() {
 		@Override
 		public void onClick(View v) {
 			
-			
+			startFragmentForResult();
 		}
 	});
 
@@ -103,7 +103,7 @@ private void setUi() {
 		@Override
 		public void onClick(View v) {
 			
-			
+			startFragmentForResult();
 		}
 	});
 	
@@ -112,7 +112,7 @@ private void setUi() {
 		
 		@Override
 		public void onClick(View v) {
-			
+			startFragmentForResult();
 			
 		}
 	});
@@ -122,7 +122,7 @@ private void setUi() {
 		
 		@Override
 		public void onClick(View v) {
-			
+			startFragmentForResult();
 			
 		}
 	});
@@ -133,7 +133,7 @@ private void setUi() {
 		@Override
 		public void onClick(View v) {
 			
-			
+			startFragmentForResult();
 		}
 	});
 	
@@ -143,7 +143,7 @@ private void setUi() {
 		@Override
 		public void onClick(View v) {
 			
-			
+			startFragmentForResult();
 		}
 	});
 }
@@ -151,5 +151,8 @@ private void setUi() {
 	public void onAttach(Activity activity) {
 		
 		super.onAttach(activity);
+	}
+	private void startFragmentForResult() {
+		homeActivity.commitFragment(new PropertySearchFilterFragment());
 	}
 }

@@ -11,20 +11,19 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 import com.finsolutia.fragment.FavoriteContainerFragment;
-import com.finsolutia.fragment.MenuFragment;
-import com.finsolutia.fragment.MapContainerFragment;
-import com.finsolutia.fragment.PropertySearchResultFragment;
-import com.finsolutia.fragment.SearchContainerFragment;
 import com.finsolutia.fragment.FavoriteContainerFragment.HandleFavoriteFragment;
-import com.finsolutia.fragment.MenuFragment.MenuClickListioner;
+import com.finsolutia.fragment.MapContainerFragment;
 import com.finsolutia.fragment.MapContainerFragment.HandleMapFragment;
-import com.finsolutia.fragment.SearchContainerFragment.HandlSeachFragment;
+import com.finsolutia.fragment.MenuFragment;
+import com.finsolutia.fragment.MenuFragment.MenuClickListioner;
+import com.finsolutia.fragment.SearchContainerFragment;
+import com.finsolutia.fragment.SearchContainerFragment.HandleSeachFragment;
 
 
 
 public class HomeActivity extends FragmentActivity implements
 		MenuClickListioner, HandleFavoriteFragment, HandleMapFragment,
-		HandlSeachFragment{
+		HandleSeachFragment{
 	public int currentTab;
 	
  private FragmentTabHost mTabHost;
@@ -89,18 +88,18 @@ public class HomeActivity extends FragmentActivity implements
 		
 	}
 
-	public void commitFragment(Fragment fragment,int Tab) {
+	public void commitFragment(Fragment fragment) {
 		
 		FragmentTransaction ft;
 		switch (currentTab) {
-		case SearchContainerFragment.TAB_ID:
+		case 0:
 			ft = searchFragmentManager.beginTransaction();
 			ft.replace(R.id.searchContainer, fragment);
 			ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
 			ft.addToBackStack(null);
 			ft.commit();
 			break;
-		case MapContainerFragment.TAB_ID:
+		case 1:
 			ft = mapFragmentManager.beginTransaction();
 			ft.replace(R.id.mapContainer, fragment);
 			ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);

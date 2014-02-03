@@ -14,12 +14,11 @@ import com.finsoltia.R;
 
 public class MapContainerFragment extends BaseFragment {
 	HandleMapFragment handleMapFragment;
-    public static final int TAB_ID=1;
     @Override
     public void onCreate(Bundle savedInstanceState) {
     	super.onCreate(savedInstanceState);
     	
-    	homeActivity.commitFragment(new MapDetailFragment(),TAB_ID);		
+    	homeActivity.commitFragment(new MapDetailFragment());		
     		
            
 		

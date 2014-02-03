@@ -11,12 +11,12 @@ import com.finsoltia.HomeActivity;
 import com.finsoltia.R;
 
 public class SearchContainerFragment extends BaseFragment {
-	HandlSeachFragment handlSeachFragment;
-	public static final int TAB_ID=0;
+	HandleSeachFragment handleSeachFragment;
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		homeActivity.commitFragment(new PropertySearchFragment(),TAB_ID);
+		homeActivity.commitFragment(new PropertySearchFragment());
 	}
 	
 	@Override
@@ -31,12 +31,13 @@ public class SearchContainerFragment extends BaseFragment {
 	@Override
 	public void onAttach(Activity activity) {
 		super.onAttach(activity);
-        handlSeachFragment.setupSeachPush(getChildFragmentManager());
-		homeActivity=(HomeActivity) activity;
-		super.onAttach(activity);
+		handleSeachFragment=(HandleSeachFragment) activity;
+        handleSeachFragment.setupSeachPush(getChildFragmentManager());
+		
+		
 	}
 	
-	public interface HandlSeachFragment{
+	public interface HandleSeachFragment{
 		public void setupSeachPush(FragmentManager fragmentManagert); 
 		
 	}
