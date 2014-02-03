@@ -1,4 +1,4 @@
-package com.finsoltia.fragment;
+package com.finsolutia.fragment;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import com.finsoltia.HomeActivity;
 import com.finsoltia.R;
 
-public class MyMapFragment extends Fragment {
+public class MapContainerFragment extends Fragment {
 	HomeActivity homeActivity;
     HandleMapFragment handleMapFragment;
     public static final int TAB_ID=1;
@@ -20,7 +20,7 @@ public class MyMapFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
     	super.onCreate(savedInstanceState);
     	
-    	homeActivity.commitFragment(new DetailMapFragment(),TAB_ID);		
+    	homeActivity.commitFragment(new MapDetailFragment(),TAB_ID);		
     		
            
 		

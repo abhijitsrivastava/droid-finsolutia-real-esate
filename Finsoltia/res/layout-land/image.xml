@@ -12,9 +12,10 @@
 
         <ImageView
             android:id="@+id/imageView1"
-            android:layout_width="match_parent"
+            android:layout_width="250dp"
              android:layout_height="250dp"
             android:scaleType="centerCrop"
+            android:background="@drawable/roundes_shape"
             android:src="@drawable/im_5" />
 
         <ImageView

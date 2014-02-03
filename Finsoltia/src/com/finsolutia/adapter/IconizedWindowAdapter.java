@@ -1,4 +1,4 @@
-package com.finsoltia.fragment;
+package com.finsolutia.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;

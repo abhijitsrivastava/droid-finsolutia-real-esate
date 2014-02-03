@@ -1,4 +1,4 @@
-package com.finsoltia.fragment;
+package com.finsolutia.fragment;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -13,7 +13,7 @@ import android.widget.Button;
 import com.finsoltia.HomeActivity;
 import com.finsoltia.R;
 
-public class FavoriteFragment extends Fragment {
+public class FavoriteContainerFragment extends Fragment {
 	HandleFavoriteFragment handleFavoriteFragment;
 	HomeActivity homeActivity;
 	private static final int TAB_ID=3;

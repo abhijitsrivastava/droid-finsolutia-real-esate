@@ -3,12 +3,12 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="horizontal"
-    android:background="@color/gray"
+    android:background="@android:color/black"
     android:weightSum="1" >
 
     <FrameLayout
         android:id="@+id/fragment0"
-        android:layout_width="500dp"
+        android:layout_width="400dp"
         android:layout_height="match_parent"
         >
 
@@ -16,6 +16,7 @@
  <android.support.v4.app.FragmentTabHost
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@android:id/tabhost"
+    android:paddingLeft="1dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 

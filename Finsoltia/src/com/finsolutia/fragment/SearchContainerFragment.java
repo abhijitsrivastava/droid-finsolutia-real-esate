@@ -1,4 +1,4 @@
-package com.finsoltia.fragment;
+package com.finsolutia.fragment;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -13,14 +13,14 @@ import android.widget.Button;
 import com.finsoltia.HomeActivity;
 import com.finsoltia.R;
 
-public class SearchFragment extends Fragment {
+public class SearchContainerFragment extends Fragment {
 	HomeActivity homeActivity;
 	HandlSeachFragment handlSeachFragment;
 	public static final int TAB_ID=0;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		homeActivity.commitFragment(new DetailFragment(),TAB_ID);
+		homeActivity.commitFragment(new PropertyDetailFragment(),TAB_ID);
 	}
 	
 	@Override

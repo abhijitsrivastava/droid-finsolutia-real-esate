@@ -10,14 +10,15 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import com.finsoltia.fragment.FavoriteFragment;
-import com.finsoltia.fragment.FavoriteFragment.HandleFavoriteFragment;
-import com.finsoltia.fragment.MenuFragment;
-import com.finsoltia.fragment.MenuFragment.MenuClickListioner;
-import com.finsoltia.fragment.MyMapFragment;
-import com.finsoltia.fragment.MyMapFragment.HandleMapFragment;
-import com.finsoltia.fragment.SearchFragment;
-import com.finsoltia.fragment.SearchFragment.HandlSeachFragment;
+import com.finsolutia.fragment.FavoriteContainerFragment;
+import com.finsolutia.fragment.MenuFragment;
+import com.finsolutia.fragment.MapContainerFragment;
+import com.finsolutia.fragment.PropertySearchResultFragment;
+import com.finsolutia.fragment.SearchContainerFragment;
+import com.finsolutia.fragment.FavoriteContainerFragment.HandleFavoriteFragment;
+import com.finsolutia.fragment.MenuFragment.MenuClickListioner;
+import com.finsolutia.fragment.MapContainerFragment.HandleMapFragment;
+import com.finsolutia.fragment.SearchContainerFragment.HandlSeachFragment;
 
 
 
@@ -49,11 +50,11 @@ public class HomeActivity extends FragmentActivity implements
 	        mTabHost.setup(this, getSupportFragmentManager(), R.id.realtabcontent);
 
 	        mTabHost.addTab(mTabHost.newTabSpec("simple").setIndicator("Simple"),
-	                SearchFragment.class, null);
+	                SearchContainerFragment.class, null);
 	        mTabHost.addTab(mTabHost.newTabSpec("contacts").setIndicator("Contacts"),
-	                MyMapFragment.class, null);
+	                MapContainerFragment.class, null);
 	        mTabHost.addTab(mTabHost.newTabSpec("custom").setIndicator("Custom"),
-	                FavoriteFragment.class, null);
+	                FavoriteContainerFragment.class, null);
 	        mTabHost.getTabWidget().getChildAt(0).setVisibility(View.GONE);
 	        mTabHost.getTabWidget().getChildAt(1).setVisibility(View.GONE);
 	        mTabHost.getTabWidget().getChildAt(2).setVisibility(View.GONE);
@@ -89,16 +90,17 @@ public class HomeActivity extends FragmentActivity implements
 	}
 
 	public void commitFragment(Fragment fragment,int Tab) {
+		
 		FragmentTransaction ft;
-		switch (Tab) {
-		case SearchFragment.TAB_ID:
+		switch (currentTab) {
+		case SearchContainerFragment.TAB_ID:
 			ft = searchFragmentManager.beginTransaction();
 			ft.replace(R.id.searchContainer, fragment);
 			ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
 			ft.addToBackStack(null);
 			ft.commit();
 			break;
-		case MyMapFragment.TAB_ID:
+		case MapContainerFragment.TAB_ID:
 			ft = mapFragmentManager.beginTransaction();
 			ft.replace(R.id.mapContainer, fragment);
 			ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);

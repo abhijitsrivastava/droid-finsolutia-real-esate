@@ -1,4 +1,4 @@
-package com.finsoltia.fragment;
+package com.finsolutia.fragment;
 
 import android.app.Activity;
 

@@ -1,4 +1,4 @@
-package com.finsoltia.fragment;
+package com.finsolutia.fragment;
 
 
 import android.app.Activity;
@@ -15,6 +15,7 @@ import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.finsoltia.R;
+import com.finsolutia.adapter.IconizedWindowAdapter;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -28,7 +29,7 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class DetailFragment extends Fragment {
+public class PropertyDetailFragment extends Fragment {
 
 	private static View detailFragment = null;
 	

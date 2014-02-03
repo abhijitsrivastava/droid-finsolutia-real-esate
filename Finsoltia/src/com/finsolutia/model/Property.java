@@ -1,4 +1,4 @@
-package com.finsoltia.fragment;
+package com.finsolutia.model;
 
 import java.util.HashMap;
 import java.util.Map;
