@@ -20,7 +20,7 @@ public class SearchContainerFragment extends Fragment {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		homeActivity.commitFragment(new PropertyDetailFragment(),TAB_ID);
+		homeActivity.commitFragment(new PropertySearchFragment(),TAB_ID);
 	}
 	
 	@Override

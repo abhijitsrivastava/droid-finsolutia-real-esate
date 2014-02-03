@@ -18,8 +18,7 @@ import com.finsolutia.adapter.PropertySearchAdapter;
 import com.finsolutia.model.ListItem;
 
 public class PropertySearchFragment extends Fragment {
-private final int baseId=12345;
-private final int basePrice=540000;
+
 View propertySearchFragment;
 List<ListItem> propertyList;
 
@@ -30,12 +29,7 @@ List<ListItem> propertyList;
 		if (savedInstanceState==null) {
 			propertyList = new ArrayList<ListItem>();
 
-			for (int i = 0; i < 10; i++) {
-				ListItem listItem = new ListItem("" + (baseId + i), getDrawable(),
-						"Type" + i, "County " + i, "Parish " + i, i + " Bedroom",
-						(i + basePrice) + " $", false);
-				propertyList.add(listItem);
-			}	
+		
 		}
 		
 	}
@@ -49,8 +43,5 @@ List<ListItem> propertyList;
 		return propertySearchFragment;
 	}
 
-	private Drawable getDrawable() {
-		return new RoundedAvatarDrawable(BitmapFactory.decodeResource(
-				getResources(), R.drawable.im_1));
-	}
+	
 }

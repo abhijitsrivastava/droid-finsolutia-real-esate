@@ -31,7 +31,7 @@ List<ListItem> propertyList;
 			propertyList = new ArrayList<ListItem>();
 
 			for (int i = 0; i < 10; i++) {
-				ListItem listItem = new ListItem("" + (baseId + i), getDrawable(),
+				ListItem listItem = new ListItem("" + (baseId + i), null,
 						"Type" + i, "County " + i, "Parish " + i, i + " Bedroom",
 						(i + basePrice) + " $", false);
 				propertyList.add(listItem);
@@ -53,8 +53,5 @@ List<ListItem> propertyList;
 		return propertySearchFragment;
 	}
 
-	private Drawable getDrawable() {
-		return new RoundedAvatarDrawable(BitmapFactory.decodeResource(
-				getResources(), R.drawable.im_1));
-	}
+	
 }
