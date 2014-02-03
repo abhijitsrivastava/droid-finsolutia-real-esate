@@ -2,24 +2,28 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
     android:orientation="vertical" >
-<RelativeLayout
+
+    <RelativeLayout
         android:id="@+id/RelativeLayout1"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@drawable/header"
         android:orientation="horizontal" >
 
-        <!-- <Button
+        <!--
+             <Button
             android:id="@+id/share"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
-            android:background="@drawable/share" /> -->
+            android:background="@drawable/share" />
+        -->
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/textViewHeaderTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -28,22 +32,34 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@android:color/white" />
 
-        <!-- <Button
-            android:id="@+id/back"
+        <Button
+            android:id="@+id/ButtonBack"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:background="@drawable/back" /> -->
+            android:background="@drawable/back" />
     </RelativeLayout>
+
     <GridView
         android:id="@+id/propertyListGrid"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:horizontalSpacing="10dp"
-        android:verticalSpacing="10dp"
+        android:layout_height="wrap_content"
         android:background="@color/white"
-        android:numColumns="2" >
+        android:horizontalSpacing="10dp"
+        android:numColumns="2"
+        android:verticalSpacing="10dp" >
     </GridView>
+
+    <TextView
+        android:id="@+id/textviewNoMoreResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:drawableTop="@drawable/separator_horizontal_grey"
+        android:paddingBottom="100dp"
+        android:paddingTop="20dp"
+        android:text="	No More Result"
+        android:textSize="@dimen/subHeading" />
 
 </LinearLayout>
