@@ -12,9 +12,8 @@ import android.view.ViewGroup;
 import com.finsoltia.HomeActivity;
 import com.finsoltia.R;
 
-public class MapContainerFragment extends Fragment {
-	HomeActivity homeActivity;
-    HandleMapFragment handleMapFragment;
+public class MapContainerFragment extends BaseFragment {
+	HandleMapFragment handleMapFragment;
     public static final int TAB_ID=1;
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -37,10 +36,11 @@ public class MapContainerFragment extends Fragment {
 
 	@Override
 	public void onAttach(Activity activity) {
+		super.onAttach(activity);
 		handleMapFragment=(HandleMapFragment) activity;
 		handleMapFragment.setupMapPush(getChildFragmentManager());
-		homeActivity=(HomeActivity) activity;
-		super.onAttach(activity);
+		
+		
 	}
 	public interface HandleMapFragment{
 		public void setupMapPush(FragmentManager fragmentManagert); 

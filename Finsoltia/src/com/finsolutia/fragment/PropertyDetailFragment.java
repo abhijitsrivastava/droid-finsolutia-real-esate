@@ -29,7 +29,7 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class PropertyDetailFragment extends Fragment {
+public class PropertyDetailFragment extends BaseFragment {
 
 	private static View detailFragment = null;
 	
@@ -236,7 +236,6 @@ public class PropertyDetailFragment extends Fragment {
 	  
 	 @Override
 	public void onAttach(Activity activity) {
-		
 		super.onAttach(activity);
 	
 		

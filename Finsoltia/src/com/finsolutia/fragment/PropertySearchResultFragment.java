@@ -3,6 +3,7 @@ package com.finsolutia.fragment;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.app.Activity;
 import android.content.res.Configuration;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
@@ -17,7 +18,7 @@ import com.finsoltia.R;
 import com.finsolutia.adapter.PropertySearchAdapter;
 import com.finsolutia.model.ListItem;
 
-public class PropertySearchResultFragment extends Fragment {
+public class PropertySearchResultFragment extends BaseFragment {
 private final int baseId=12345;
 private final int basePrice=540000;
 View propertySearchFragment;
@@ -53,5 +54,9 @@ List<ListItem> propertyList;
 		return propertySearchFragment;
 	}
 
-	
+	@Override
+		public void onAttach(Activity activity) {
+			
+			super.onAttach(activity);
+		}
 }

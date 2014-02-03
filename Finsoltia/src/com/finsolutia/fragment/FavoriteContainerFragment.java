@@ -13,9 +13,9 @@ import android.widget.Button;
 import com.finsoltia.HomeActivity;
 import com.finsoltia.R;
 
-public class FavoriteContainerFragment extends Fragment {
+public class FavoriteContainerFragment extends BaseFragment {
 	HandleFavoriteFragment handleFavoriteFragment;
-	HomeActivity homeActivity;
+	
 	private static final int TAB_ID=3;
 
 	@Override
@@ -46,11 +46,10 @@ public class FavoriteContainerFragment extends Fragment {
 
 	@Override
 	public void onAttach(Activity activity) {
-		
+		super.onAttach(activity);
 		handleFavoriteFragment=(HandleFavoriteFragment) activity;
 		handleFavoriteFragment.setupFavoritePush(getChildFragmentManager());
-        homeActivity=(HomeActivity) activity;
-		super.onAttach(activity);
+        
 	}
 	
 	public interface HandleFavoriteFragment{

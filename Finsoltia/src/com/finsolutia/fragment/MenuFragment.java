@@ -15,11 +15,10 @@ import android.widget.LinearLayout;
 import com.finsoltia.HomeActivity;
 import com.finsoltia.R;
 
-public class MenuFragment extends Fragment {
+public class MenuFragment extends BaseFragment {
 
 	View menuFragment;
-	HomeActivity homeActivity;
-    LinearLayout searchContainer,mapContainer,favoriteContainer;
+	LinearLayout searchContainer,mapContainer,favoriteContainer;
     MenuClickListioner menuClickListioner;
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -75,8 +74,9 @@ public class MenuFragment extends Fragment {
 
 	@Override
 	public void onAttach(Activity activity) {
-		menuClickListioner=(MenuClickListioner) activity;
 		super.onAttach(activity);
+		menuClickListioner=(MenuClickListioner) activity;
+		
 	}
 	
 	public interface MenuClickListioner {

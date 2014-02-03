@@ -21,7 +21,7 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MapDetailFragment extends Fragment {
+public class MapDetailFragment extends BaseFragment {
 private static 	View detailMapFragment;
 	private GoogleMap googleMap;
 	@Override
@@ -141,8 +141,6 @@ private static 	View detailMapFragment;
 
 	@Override
 	public void onAttach(Activity activity) {
-		
-		
 		super.onAttach(activity);
 	}
 	
