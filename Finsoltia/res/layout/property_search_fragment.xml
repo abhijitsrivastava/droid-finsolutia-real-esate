@@ -75,7 +75,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/rounded_edit_text_gray"
+                android:background="@drawable/rounded_background_gray"
                 android:orientation="vertical" >
 
                 <Button
@@ -142,7 +142,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:background="@drawable/rounded_edit_text_gray"
+                android:background="@drawable/rounded_background_gray"
                 android:orientation="vertical" >
 
                 <Button
@@ -161,7 +161,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:background="@drawable/rounded_edit_text_gray"
+                android:background="@drawable/rounded_background_gray"
                 android:orientation="vertical" >
 
                 <TextView
@@ -181,7 +181,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:background="@drawable/rounded_edit_text_gray"
+                android:background="@drawable/rounded_background_gray"
                 android:orientation="vertical" >
 
                 <Button
@@ -212,7 +212,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:background="@drawable/rounded_edit_text_gray"
+                android:background="@drawable/rounded_background_gray"
                 android:orientation="vertical" >
 
                 <TextView
@@ -232,7 +232,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:background="@drawable/rounded_edit_text_gray"
+                android:background="@drawable/rounded_background_gray"
                 android:orientation="vertical" >
 
                 <Button
