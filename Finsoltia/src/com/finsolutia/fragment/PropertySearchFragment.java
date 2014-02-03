@@ -16,7 +16,8 @@ public class PropertySearchFragment extends BaseFragment {
     private View propertySearchFragment;
 	private Button buttonLookingFor, buttonWhere, buttonDistrict, buttonCounty,
 			buttonParish, buttonMoreOption,
-			buttonBedroomsFrom,buttonBedroomsTo,buttonPriceMin,buttonPriceMax,buttonSearch;
+			buttonBedroomsFrom,buttonBedroomsTo,buttonPriceMin,buttonPriceMax,
+			buttonPropertySearch;
 
 @Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -137,13 +138,14 @@ private void setUi() {
 		}
 	});
 	
-	buttonSearch=(Button)propertySearchFragment.findViewById(R.id.buttonSearch);
-	buttonSearch.setOnClickListener(new OnClickListener() {
+	
+	buttonPropertySearch=(Button)propertySearchFragment.findViewById(R.id.buttonPropertySearch);
+	buttonPropertySearch.setOnClickListener(new OnClickListener() {
 		
 		@Override
 		public void onClick(View v) {
 			
-			startFragmentForResult();
+			homeActivity.commitFragment(new PropertySearchResultFragment());
 		}
 	});
 }

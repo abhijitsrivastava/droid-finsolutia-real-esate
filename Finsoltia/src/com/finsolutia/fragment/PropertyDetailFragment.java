@@ -9,7 +9,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.Toast;
@@ -32,7 +34,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class PropertyDetailFragment extends BaseFragment {
 
 	private static View detailFragment = null;
-	
+	private Button detailPropertyBack;
 	private GoogleMap googleMap;
 	MapFragment mapFragment;
 	
@@ -43,6 +45,15 @@ public class PropertyDetailFragment extends BaseFragment {
 		  
 		    
 		    	detailFragment = inflater.inflate(R.layout.detail_property, container, false);
+		    	detailPropertyBack=(Button)detailFragment.findViewById(R.id.detailPropertyBack);
+		    	detailPropertyBack.setOnClickListener(new OnClickListener() {
+					
+					@Override
+					public void onClick(View v) {
+						homeActivity.popFragment();
+						
+					}
+				});
 		    	int status = GooglePlayServicesUtil
 						.isGooglePlayServicesAvailable(getActivity());
 

@@ -12,6 +12,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 
 import com.finsoltia.R;
@@ -46,11 +48,17 @@ List<ListItem> propertyList;
     	propertySearchFragment = inflater.inflate(R.layout.property_search_result_fragment, container, false);
 	
 		GridView gridView =(GridView)propertySearchFragment.findViewById(R.id.propertyListGrid);
-
-		
-		gridView.setAdapter(new PropertySearchAdapter(getActivity(),
+        gridView.setAdapter(new PropertySearchAdapter(getActivity(),
 				R.layout.property_search_item, propertyList));
+        gridView.setOnItemClickListener(new OnItemClickListener() {
 
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				homeActivity.commitFragment(new PropertyDetailFragment());
+				
+			}
+		});
 		return propertySearchFragment;
 	}
 
