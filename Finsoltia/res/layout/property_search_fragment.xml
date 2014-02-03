@@ -273,9 +273,9 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:background="@android:color/transparent"
-                    android:drawableRight="@drawable/search"
+                    android:drawableRight="@drawable/search_icon_black"
                     android:gravity="right|center_vertical"
-                    android:text="Search" />
+                    android:text="Search   " />
             </LinearLayout>
 
             <LinearLayout
