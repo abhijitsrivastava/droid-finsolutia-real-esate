@@ -13,11 +13,12 @@
 
         <Button
             android:id="@+id/buttonClear"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:text="Clear" />
+            android:text="Clear"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/textViewHeaderTitle"
@@ -142,7 +143,8 @@
                         android:drawableRight="@drawable/rightarrow"
                         android:drawableTop="@drawable/separator_horizontal_white"
                         android:gravity="left|center_vertical"
-                        android:text="District" />
+                        android:text="District"
+                        android:visibility="gone" />
 
                     <Button
                         android:id="@+id/buttonCounty"
@@ -154,7 +156,8 @@
                         android:drawableRight="@drawable/rightarrow"
                         android:drawableTop="@drawable/separator_horizontal_white"
                         android:gravity="left|center_vertical"
-                        android:text="County?" />
+                        android:text="County?"
+                        android:visibility="gone" />
 
                     <Button
                         android:id="@+id/buttonParish"
@@ -166,7 +169,8 @@
                         android:drawableRight="@drawable/rightarrow"
                         android:drawableTop="@drawable/separator_horizontal_white"
                         android:gravity="left|center_vertical"
-                        android:text="Parish?" />
+                        android:text="Parish?"
+                        android:visibility="gone" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -189,105 +193,113 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/linearlayoutHiddenOption"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/activity_vertical_margin"
-                    android:background="@drawable/rounded_background_gray"
-                    android:orientation="vertical" >
+                    android:orientation="vertical"
+                    android:visibility="gone" >
 
-                    <TextView
-                        android:id="@+id/textviewBedrooms"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:paddingBottom="10dp"
-                        android:paddingTop="10dp"
-                        android:text="Bedrooms"
-                        android:textSize="@dimen/subHeading"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/activity_vertical_margin"
-                    android:background="@drawable/rounded_background_gray"
-                    android:orientation="vertical" >
-
-                    <Button
-                        android:id="@+id/buttonBedroomsFrom"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:background="@android:color/transparent"
-                        android:drawableRight="@drawable/rightarrow"
-                        android:gravity="left|center_vertical"
-                        android:text="From" />
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        android:background="@drawable/rounded_background_gray"
+                        android:orientation="vertical" >
 
-                    <Button
-                        android:id="@+id/buttonBedroomsTo"
+                        <TextView
+                            android:id="@+id/textviewBedrooms"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:paddingBottom="10dp"
+                            android:paddingTop="10dp"
+                            android:text="Bedrooms"
+                            android:textSize="@dimen/subHeading"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:background="@android:color/transparent"
-                        android:drawableRight="@drawable/rightarrow"
-                        android:drawableTop="@drawable/separator_horizontal_white"
-                        android:gravity="left|center_vertical"
-                        android:text="To" />
-                </LinearLayout>
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        android:background="@drawable/rounded_background_gray"
+                        android:orientation="vertical" >
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/activity_vertical_margin"
-                    android:background="@drawable/rounded_background_gray"
-                    android:orientation="vertical" >
+                        <Button
+                            android:id="@+id/buttonBedroomsFrom"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@android:color/transparent"
+                            android:drawableRight="@drawable/rightarrow"
+                            android:gravity="left|center_vertical"
+                            android:text="From" />
 
-                    <TextView
-                        android:id="@+id/textviewPriceRange"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:paddingBottom="10dp"
-                        android:paddingTop="10dp"
-                        android:text="Price range"
-                        android:textSize="@dimen/subHeading"
-                        android:textStyle="bold" />
-                </LinearLayout>
+                        <Button
+                            android:id="@+id/buttonBedroomsTo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@android:color/transparent"
+                            android:drawableRight="@drawable/rightarrow"
+                            android:drawableTop="@drawable/separator_horizontal_white"
+                            android:gravity="left|center_vertical"
+                            android:text="To" />
+                    </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/activity_vertical_margin"
-                    android:background="@drawable/rounded_background_gray"
-                    android:orientation="vertical" >
-
-                    <Button
-                        android:id="@+id/buttonPriceMin"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:background="@android:color/transparent"
-                        android:drawableRight="@drawable/rightarrow"
-                        android:gravity="left|center_vertical"
-                        android:text="Min" />
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        android:background="@drawable/rounded_background_gray"
+                        android:orientation="vertical" >
 
-                    <Button
-                        android:id="@+id/buttonPriceMax"
+                        <TextView
+                            android:id="@+id/textviewPriceRange"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:paddingBottom="10dp"
+                            android:paddingTop="10dp"
+                            android:text="Price range"
+                            android:textSize="@dimen/subHeading"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:background="@android:color/transparent"
-                        android:drawableRight="@drawable/rightarrow"
-                        android:drawableTop="@drawable/separator_horizontal_white"
-                        android:gravity="left|center_vertical"
-                        android:text="Max" />
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        android:background="@drawable/rounded_background_gray"
+                        android:orientation="vertical" >
+
+                        <Button
+                            android:id="@+id/buttonPriceMin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@android:color/transparent"
+                            android:drawableRight="@drawable/rightarrow"
+                            android:gravity="left|center_vertical"
+                            android:text="Min" />
+
+                        <Button
+                            android:id="@+id/buttonPriceMax"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@android:color/transparent"
+                            android:drawableRight="@drawable/rightarrow"
+                            android:drawableTop="@drawable/separator_horizontal_white"
+                            android:gravity="left|center_vertical"
+                            android:text="Max" />
+                    </LinearLayout>
                 </LinearLayout>
 
                 <LinearLayout
