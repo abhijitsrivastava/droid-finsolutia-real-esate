@@ -92,13 +92,14 @@
     </LinearLayout>
 
     <ScrollView
-        android:id="@+id/ScrollView1"
+        android:id="@+id/scrollViewParentContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/RelativeLayout1" >
 
         <LinearLayout
+            android:id="@+id/linearLayoutParentContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
@@ -221,7 +222,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/activity_vertical_margin"
                     android:background="@drawable/rounded_background_gray"
-                    android:orientation="vertical" >
+                    android:orientation="vertical"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp" >
 
                     <RelativeLayout
                         android:id="@+id/relativeLayoutBedroomsFrom"
@@ -254,7 +257,10 @@
 
                     <View
                         android:layout_width="match_parent"
-                        android:layout_height="1dp" />
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@android:color/white" />
 
                     <RelativeLayout
                         android:id="@+id/relativeLayoutBedroomsTo"
@@ -301,7 +307,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/activity_vertical_margin"
                     android:background="@drawable/rounded_background_gray"
-                    android:orientation="vertical" >
+                    android:orientation="vertical"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp" >
 
                     <RelativeLayout
                         android:id="@+id/relativeLayoutPriceMin"
@@ -321,7 +329,7 @@
                             android:text="Min" />
 
                         <TextView
-                            android:id="@+id/textViewBedroomsFrom"
+                            android:id="@+id/textViewPriceMin"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_alignParentRight="true"
@@ -334,7 +342,10 @@
 
                     <View
                         android:layout_width="match_parent"
-                        android:layout_height="1dp" />
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@android:color/white" />
 
                     <RelativeLayout
                         android:id="@+id/relativeLayoutPriceMax"
@@ -395,10 +406,18 @@
         </LinearLayout>
     </ScrollView>
 
-    <com.finsolutia.wheelpicker.WheelView
-        android:id="@+id/p1"
+    <LinearLayout
+         android:id="@+id/pickerContainer"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_alignParentBottom="true" />
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/darker_gray"
+        android:orientation="vertical" >
 
+        <com.finsolutia.wheelpicker.WheelView
+            android:id="@+id/p1"
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center" />
+    </LinearLayout>
 </RelativeLayout>
