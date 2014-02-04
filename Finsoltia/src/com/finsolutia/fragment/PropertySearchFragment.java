@@ -16,6 +16,10 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.finsoltia.R;
+import com.finsolutia.wheelpicker.ArrayWheelAdapter;
+import com.finsolutia.wheelpicker.OnWheelChangedListener;
+import com.finsolutia.wheelpicker.OnWheelScrollListener;
+import com.finsolutia.wheelpicker.WheelView;
 import com.google.android.gms.internal.el;
 
 public class PropertySearchFragment extends BaseFragment {
@@ -27,7 +31,9 @@ public class PropertySearchFragment extends BaseFragment {
 			buttonPropertySearch,buttonClear;
     private LinearLayout  linearlayoutHiddenOption;
     Bundle savedInstanceState;
-    
+    private boolean wheelScrolled = false;
+	String wheelMenu1[] = new String[]{"Country 1", "Country 2", "Country 3", "Country 4", "Country 5"};
+
     
 @Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -182,7 +188,62 @@ public class PropertySearchFragment extends BaseFragment {
 	if (savedInstanceState == null) {
 		inVisibleView(linearlayoutHiddenOption);
 	}
+	
+	WheelView wheel = (WheelView) propertySearchFragment.findViewById(R.id.p1);
+	wheel.setViewAdapter(new ArrayWheelAdapter(homeActivity,wheelMenu1));
+	wheel.setVisibleItems(2);
+	wheel.setCurrentItem(0);
+	wheel.addChangingListener(changedListener);
+	wheel.addScrollingListener(scrolledListener);
 }
+	
+	OnWheelScrollListener scrolledListener = new OnWheelScrollListener()
+	{
+		public void onScrollStarts(WheelView wheel)
+			{
+				wheelScrolled = true;
+			}
+
+		public void onScrollEnds(WheelView wheel)
+			{
+				wheelScrolled = false;
+				updateStatus();
+			}
+
+		@Override
+		public void onScrollingStarted(WheelView wheel) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void onScrollingFinished(WheelView wheel) {
+			// TODO Auto-generated method stub
+			
+		}
+	};
+
+// Wheel changed listener
+private final OnWheelChangedListener changedListener = new OnWheelChangedListener()
+	{
+		public void onChanged(WheelView wheel, int oldValue, int newValue)
+			{
+				if (!wheelScrolled)
+					{
+						updateStatus();
+					}
+			}
+	};
+
+/**
+ * Updates entered PIN status
+ */
+private void updateStatus()
+	{
+		//text1.setText(wheelMenu1[getWheel(R.id.p1).getCurrentItem()]);
+			
+	}
+	
 	@Override
 	public void onAttach(Activity activity) {
 		
