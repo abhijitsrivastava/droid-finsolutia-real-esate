@@ -2,26 +2,35 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/transparent"
     android:orientation="horizontal" >
 
     <Button
         android:id="@+id/button_map"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:text="MAP" />
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tab_bar_bg"
+        android:drawableRight="@drawable/map"
+        android:gravity="center_vertical" />
 
     <TextView
         android:id="@+id/textView_detail"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginTop="-11dp"
+        android:background="@drawable/tab_bar_bg"
         android:gravity="center"
-        android:text="PropertyDetail " />
+        android:text="Apartment/ Flat \n 12,000.00 $ "
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/button_home"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:text="HOME" />
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tab_bar_bg"
+        android:drawableLeft="@drawable/icon_home"
+        android:gravity="center_vertical" />
 
 </LinearLayout>
