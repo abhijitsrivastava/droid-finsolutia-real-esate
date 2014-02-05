@@ -241,7 +241,8 @@
                             android:layout_alignParentLeft="true"
                             android:layout_centerVertical="true"
                             android:background="@android:color/transparent"
-                            android:text="From" />
+                            android:text="From"
+                            android:textSize="@dimen/subHeading" />
 
                         <TextView
                             android:id="@+id/textViewBedroomsFrom"
@@ -252,7 +253,8 @@
                             android:background="@android:color/transparent"
                             android:drawableRight="@drawable/rightarrow"
                             android:gravity="center_vertical"
-                            android:text="0" />
+                            android:text="0"
+                            android:textSize="@dimen/subHeading" />
                     </RelativeLayout>
 
                     <View
@@ -277,7 +279,8 @@
                             android:layout_alignParentLeft="true"
                             android:layout_centerVertical="true"
                             android:background="@android:color/transparent"
-                            android:text="To" />
+                            android:text="To"
+                            android:textSize="@dimen/subHeading" />
 
                         <TextView
                             android:id="@+id/textViewBedroomsTo"
@@ -288,7 +291,8 @@
                             android:background="@android:color/transparent"
                             android:drawableRight="@drawable/rightarrow"
                             android:gravity="center_vertical"
-                            android:text="0" />
+                            android:text="0"
+                            android:textSize="@dimen/subHeading" />
                     </RelativeLayout>
                 </LinearLayout>
 
@@ -326,7 +330,8 @@
                             android:layout_alignParentLeft="true"
                             android:layout_centerVertical="true"
                             android:background="@android:color/transparent"
-                            android:text="Min" />
+                            android:text="Min"
+                            android:textSize="@dimen/subHeading" />
 
                         <TextView
                             android:id="@+id/textViewPriceMin"
@@ -337,7 +342,8 @@
                             android:background="@android:color/transparent"
                             android:drawableRight="@drawable/rightarrow"
                             android:gravity="center_vertical"
-                            android:text="0" />
+                            android:text="0"
+                            android:textSize="@dimen/subHeading" />
                     </RelativeLayout>
 
                     <View
@@ -362,7 +368,8 @@
                             android:layout_alignParentLeft="true"
                             android:layout_centerVertical="true"
                             android:background="@android:color/transparent"
-                            android:text="Max" />
+                            android:text="Max"
+                            android:textSize="@dimen/subHeading" />
 
                         <TextView
                             android:id="@+id/textViewPriceMax"
@@ -373,7 +380,8 @@
                             android:background="@android:color/transparent"
                             android:drawableRight="@drawable/rightarrow"
                             android:gravity="center_vertical"
-                            android:text="0" />
+                            android:text="0"
+                            android:textSize="@dimen/subHeading" />
                     </RelativeLayout>
                 </LinearLayout>
             </LinearLayout>
@@ -407,7 +415,7 @@
     </ScrollView>
 
     <LinearLayout
-         android:id="@+id/pickerContainer"
+        android:id="@+id/pickerContainer"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_alignParentBottom="true"
@@ -420,4 +428,5 @@
             android:layout_height="match_parent"
             android:layout_gravity="center" />
     </LinearLayout>
+
 </RelativeLayout>
