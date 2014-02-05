@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import android.R.integer;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -36,7 +37,7 @@ public class HomeActivity extends FragmentActivity implements
 
  private FragmentTabHost mTabHost;
  public FragmentManager favoriteFragmentManager,searchFragmentManager,mapFragmentManager;
- FrameLayout search,map,favorite;
+ FrameLayout search,map,favorite,menu;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +45,9 @@ public class HomeActivity extends FragmentActivity implements
 		
 		setContentView(R.layout.activity_main);
 		currentTab=0;
-		Toast.makeText(getApplicationContext(), "oncreate", 1).show();
+	//	menu=(FrameLayout)findViewById(R.id.fragment0);
+		//menu.bringToFront();
+		//Toast.makeText(getApplicationContext(), "oncreate", 1).show();
 		
 		initialCommitFragment(R.id.fragment0, new MenuFragment());
 		/*search=(FrameLayout)findViewById(R.id.fragment1);
@@ -168,7 +171,11 @@ public class HomeActivity extends FragmentActivity implements
 	}
 
 
-
+@Override
+	public void onConfigurationChanged(Configuration newConfig) {
+		// TODO Auto-generated method stub
+		super.onConfigurationChanged(newConfig);
+	}
 	
 	
 }

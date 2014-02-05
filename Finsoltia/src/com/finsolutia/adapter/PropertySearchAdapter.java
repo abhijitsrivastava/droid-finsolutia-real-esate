@@ -44,7 +44,20 @@ public class PropertySearchAdapter extends ArrayAdapter<ListItem>{
 	            holder = (ViewHolder) convertView.getTag();
 	            
 	        }
-	        //holder.propertyIcon;
+		switch (position) {
+		case 0:
+			   holder.propertyIcon.setImageResource(R.drawable.im_1);
+			break;
+		case 1:
+			   holder.propertyIcon.setImageResource(R.drawable.im_2);
+			break;
+		case 2:
+			   holder.propertyIcon.setImageResource(R.drawable.im_3);
+			break;
+		default:
+			break;
+		}
+	     
             holder .propertyType.setText(item.getPropertyType());
             holder .propertyCounty.setText(item.getPropertyCounty());
             holder .propertyParish.setText(item.getPropertyParish());

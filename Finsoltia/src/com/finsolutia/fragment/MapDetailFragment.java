@@ -159,8 +159,8 @@ private static 	View detailMapFragment;
 			
 			// check if map is created successfully or not
 			if (googleMap == null) {
-				Toast.makeText(getActivity(), "Sorry! unable to create maps",
-						Toast.LENGTH_SHORT).show();
+				/*Toast.makeText(getActivity(), "Sorry! unable to create maps",
+						Toast.LENGTH_SHORT).show();*/
 			}
 		}
 	}

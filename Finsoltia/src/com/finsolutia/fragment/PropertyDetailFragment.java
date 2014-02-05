@@ -162,8 +162,8 @@ public class PropertyDetailFragment extends BaseFragment {
 
 	@Override
 	public void onPause() {
-		Toast.makeText(getActivity(), "onPause",
-				Toast.LENGTH_SHORT).show();
+		/*Toast.makeText(getActivity(), "onPause",
+				Toast.LENGTH_SHORT).show();*/
 		super.onPause();
 	//	mMapView.onPause();
 	}
@@ -171,7 +171,7 @@ public class PropertyDetailFragment extends BaseFragment {
 	@Override
 	public void onResume() {
 		super.onResume();
-		Toast.makeText(getActivity(), "resume", 1).show();
+		//Toast.makeText(getActivity(), "resume", 1).show();
 	     initilizeMap();
 		final ScrollView mainScrollView = (ScrollView) detailFragment.findViewById(R.id.main_scrollview);
 		ImageView transparentImageView = (ImageView) detailFragment.findViewById(R.id.transparent_image);
@@ -225,8 +225,8 @@ public class PropertyDetailFragment extends BaseFragment {
 			
 			// check if map is created successfully or not
 			if (googleMap == null) {
-				Toast.makeText(getActivity(), "Sorry! unable to create maps",
-						Toast.LENGTH_SHORT).show();
+				/*Toast.makeText(getActivity(), "Sorry! unable to create maps",
+						Toast.LENGTH_SHORT).show();*/
 			}
 			//removeMapView.removeMap(mMapView,googleMap);
 		}

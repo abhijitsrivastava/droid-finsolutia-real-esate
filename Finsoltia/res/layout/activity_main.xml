@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal"
+    android:background="@android:color/black"
+    android:weightSum="1" >
+
+    <FrameLayout
+        android:id="@+id/fragment0"
+        android:layout_width="400dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        >
+
+    </FrameLayout>
+ <android.support.v4.app.FragmentTabHost
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/tabhost"
+ 
+    android:layout_alignParentLeft="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"/>
+
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="0"/>
+
+        <FrameLayout
+            android:id="@+id/realtabcontent"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+</android.support.v4.app.FragmentTabHost>
+ <!--     <FrameLayout
+         android:id="@+id/fragment1"
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:layout_marginLeft="1dp"
+         android:layout_weight="1" />
+ 
+   <FrameLayout
+       android:id="@+id/fragment2"
+       android:layout_width="0dp"
+       android:layout_height="match_parent"
+       android:layout_marginLeft="2dp"
+       android:layout_weight="1" />
+  
+   <FrameLayout
+       android:id="@+id/fragment3"
+       android:layout_width="0dp"
+       android:layout_height="match_parent"
+       android:layout_marginLeft="2dp"
+       android:layout_weight="1" /> -->
+ 
+</RelativeLayout>

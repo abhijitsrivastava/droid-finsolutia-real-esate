@@ -1,11 +1,9 @@
 package com.finsolutia.fragment;
 
-import java.util.List;
 import java.util.Map;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +12,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,7 +20,6 @@ import com.finsolutia.wheelpicker.ArrayWheelAdapter;
 import com.finsolutia.wheelpicker.OnWheelChangedListener;
 import com.finsolutia.wheelpicker.OnWheelScrollListener;
 import com.finsolutia.wheelpicker.WheelView;
-import com.google.android.gms.internal.el;
 
 public class PropertySearchFragment extends BaseFragment {
 
@@ -39,7 +35,7 @@ public class PropertySearchFragment extends BaseFragment {
 			textViewPriceMin, textViewPriceMax;
 
 	private WheelView wheel;
-	private LinearLayout linearlayoutHiddenOption,pickerContainer;
+	private LinearLayout linearlayoutHiddenOption, pickerContainer;
 	private LinearLayout linearLayoutParentContainer;
 	Bundle savedInstanceState;
 	private boolean wheelScrolled = false;
@@ -52,13 +48,25 @@ public class PropertySearchFragment extends BaseFragment {
 	String wheelMenu1[] = new String[] { "Country 1", "Country 2", "Country 3",
 			"Country 4", "Country 5" };
 	Map<Integer, String> list;
-
+    
+	int [] bedRoomRange = new int[21];
+    //long [] priceRange = new long[1000001];	
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		this.savedInstanceState = savedInstanceState;
-
+		
+		
+		/*for(int bedroomIndex=0;bedroomIndex<=20;bedroomIndex++){
+			bedRoomRange[bedroomIndex]=bedroomIndex;
+		}
+		int priceRangeIndex = 0;
+		while(priceRangeIndex<=1000000){
+		priceRangeIndex+=10000;
+		//priceRange = (float) priceRangeIndex;
+		}*/
 	}
 
 	@Override
@@ -66,21 +74,21 @@ public class PropertySearchFragment extends BaseFragment {
 			Bundle savedInstanceState) {
 		propertySearchFragment = inflater.inflate(
 				R.layout.property_search_fragment, container, false);
-		Toast.makeText(homeActivity, "onCreateView", 1).show();
+		//Toast.makeText(homeActivity, "onCreateView", 1).show();
 		setUi();
 		setFilterValue();
 		return propertySearchFragment;
 	}
 
 	private void setUi() {
-		buttonClear= (Button) propertySearchFragment
+		buttonClear = (Button) propertySearchFragment
 				.findViewById(R.id.buttonClear);
 		buttonClear.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				homeActivity.listMap.clear();
-                setFilterValue();
+				setFilterValue();
 			}
 		});
 		inVisibleView(buttonClear);
@@ -95,142 +103,158 @@ public class PropertySearchFragment extends BaseFragment {
 			}
 		});
 
-	buttonWhere =(Button)propertySearchFragment.findViewById(R.id.buttonWhere);
-	buttonWhere.setOnClickListener(new OnClickListener() {
-		
-		@Override
-		public void onClick(View v) {
-			
-			startFragmentForResult(1);	
-		}
-	});
-	
-	buttonDistrict=(Button)propertySearchFragment.findViewById(R.id.buttonDistrict);
-	buttonDistrict.setOnClickListener(new OnClickListener() {
-		
-		@Override
-		public void onClick(View v) {
-			
-			startFragmentForResult(2);
-		}
-	});
-	
-	buttonCounty=(Button)propertySearchFragment.findViewById(R.id.buttonCounty);
-	buttonCounty.setOnClickListener(new OnClickListener() {
-		
-		@Override
-		public void onClick(View v) {
-			startFragmentForResult(3);
-			
-		}
-	});
-	
-	buttonParish=(Button)propertySearchFragment.findViewById(R.id.buttonParish);
-	buttonParish.setOnClickListener(new OnClickListener() {
-		
-		@Override
-		public void onClick(View v) {
-			startFragmentForResult(4);
-			
-		}
-	});
-	
-	buttonMoreOption=(Button)propertySearchFragment.findViewById(R.id.buttonMoreOption);
-	buttonMoreOption.setOnClickListener(new OnClickListener() {
-		
-		@Override
-		public void onClick(View v) {
-			if (linearlayoutHiddenOption.getVisibility()==View.VISIBLE) {
-				inVisibleView(linearlayoutHiddenOption);
-				buttonMoreOption.setText("More options");
-			}else{
-				visibleView(linearlayoutHiddenOption);
-				
-				buttonMoreOption.setText("Less options");
+		buttonWhere = (Button) propertySearchFragment
+				.findViewById(R.id.buttonWhere);
+		buttonWhere.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+
+				startFragmentForResult(1);
 			}
-			
-		}
-	});
+		});
 
-	relativeLayoutBedroomsFrom=(RelativeLayout)propertySearchFragment.findViewById(R.id.relativeLayoutBedroomsFrom);
-	relativeLayoutBedroomsFrom.setOnClickListener(new OnClickListener() {
-		
-		@Override
-		public void onClick(View v) {
-			pickerValueContainer=PickerValueContainer.BEDROOMS_FROM;
-			visibleView(pickerContainer);
-		}
-	});
-	
-	relativeLayoutBedroomsTo=(RelativeLayout)propertySearchFragment.findViewById(R.id.relativeLayoutBedroomsTo);
-	relativeLayoutBedroomsTo.setOnClickListener(new OnClickListener() {
-		
-		@Override
-		public void onClick(View v) {
-			pickerValueContainer=PickerValueContainer.BEDROOMS_TO;
-			visibleView(pickerContainer);
-		}
-	});
-	
-	relativeLayoutPriceMin=(RelativeLayout)propertySearchFragment.findViewById(R.id.relativeLayoutPriceMin);
-	relativeLayoutPriceMin.setOnClickListener(new OnClickListener() {
-		
-		@Override
-		public void onClick(View v) {
-			pickerValueContainer=PickerValueContainer.PRICE_MIN;
-			visibleView(pickerContainer);
-		}
-	});
+		buttonDistrict = (Button) propertySearchFragment
+				.findViewById(R.id.buttonDistrict);
+		buttonDistrict.setOnClickListener(new OnClickListener() {
 
-	relativeLayoutPriceMax=(RelativeLayout)propertySearchFragment.findViewById(R.id.relativeLayoutPriceMax);
-	relativeLayoutPriceMax.setOnClickListener(new OnClickListener() {
-		
-		@Override
-		public void onClick(View v) {
-			
-			pickerValueContainer=PickerValueContainer.PRICE_MAX;
-			visibleView(pickerContainer);
+			@Override
+			public void onClick(View v) {
+
+				startFragmentForResult(2);
+			}
+		});
+
+		buttonCounty = (Button) propertySearchFragment
+				.findViewById(R.id.buttonCounty);
+		buttonCounty.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				startFragmentForResult(3);
+
+			}
+		});
+
+		buttonParish = (Button) propertySearchFragment
+				.findViewById(R.id.buttonParish);
+		buttonParish.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				startFragmentForResult(4);
+
+			}
+		});
+
+		buttonMoreOption = (Button) propertySearchFragment
+				.findViewById(R.id.buttonMoreOption);
+		buttonMoreOption.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				if (linearlayoutHiddenOption.getVisibility() == View.VISIBLE) {
+					inVisibleView(linearlayoutHiddenOption);
+					buttonMoreOption.setText("More options");
+				} else {
+					visibleView(linearlayoutHiddenOption);
+
+					buttonMoreOption.setText("Less options");
+				}
+
+			}
+		});
+
+		relativeLayoutBedroomsFrom = (RelativeLayout) propertySearchFragment
+				.findViewById(R.id.relativeLayoutBedroomsFrom);
+		relativeLayoutBedroomsFrom.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				pickerValueContainer = PickerValueContainer.BEDROOMS_FROM;
+				//visibleView(pickerContainer);
+			}
+		});
+
+		relativeLayoutBedroomsTo = (RelativeLayout) propertySearchFragment
+				.findViewById(R.id.relativeLayoutBedroomsTo);
+		relativeLayoutBedroomsTo.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				pickerValueContainer = PickerValueContainer.BEDROOMS_TO;
+				//visibleView(pickerContainer);
+			}
+		});
+
+		relativeLayoutPriceMin = (RelativeLayout) propertySearchFragment
+				.findViewById(R.id.relativeLayoutPriceMin);
+		relativeLayoutPriceMin.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				pickerValueContainer = PickerValueContainer.PRICE_MIN;
+				//visibleView(pickerContainer);
+			}
+		});
+
+		relativeLayoutPriceMax = (RelativeLayout) propertySearchFragment
+				.findViewById(R.id.relativeLayoutPriceMax);
+		relativeLayoutPriceMax.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+
+				pickerValueContainer = PickerValueContainer.PRICE_MAX;
+				//visibleView(pickerContainer);
+			}
+		});
+		textViewBedroomsFrom = (TextView) propertySearchFragment
+				.findViewById(R.id.textViewBedroomsFrom);
+		textViewBedroomsTo = (TextView) propertySearchFragment
+				.findViewById(R.id.textViewBedroomsTo);
+		textViewPriceMax = (TextView) propertySearchFragment
+				.findViewById(R.id.textViewPriceMax);
+		textViewPriceMin = (TextView) propertySearchFragment
+				.findViewById(R.id.textViewPriceMin);
+
+		buttonPropertySearch = (Button) propertySearchFragment
+				.findViewById(R.id.buttonPropertySearch);
+		buttonPropertySearch.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+
+				homeActivity.commitFragment(new PropertySearchResultFragment());
+			}
+		});
+
+		linearlayoutHiddenOption = (LinearLayout) propertySearchFragment
+				.findViewById(R.id.linearlayoutHiddenOption);
+		pickerContainer = (LinearLayout) propertySearchFragment
+				.findViewById(R.id.pickerContainer);
+
+		if (savedInstanceState == null) {
+			inVisibleView(linearlayoutHiddenOption);
 		}
-	});
-	textViewBedroomsFrom=(TextView)propertySearchFragment.findViewById(R.id.textViewBedroomsFrom);
-	textViewBedroomsTo=(TextView)propertySearchFragment.findViewById(R.id.textViewBedroomsTo);
-	textViewPriceMax=(TextView)propertySearchFragment.findViewById(R.id.textViewPriceMax);
-	textViewPriceMin=(TextView)propertySearchFragment.findViewById(R.id.textViewPriceMin);
-	
-	buttonPropertySearch=(Button)propertySearchFragment.findViewById(R.id.buttonPropertySearch);
-	buttonPropertySearch.setOnClickListener(new OnClickListener() {
-		
-		@Override
-		public void onClick(View v) {
-			
-			homeActivity.commitFragment(new PropertySearchResultFragment());
-		}
-	});
-	
-	
-	linearlayoutHiddenOption=(LinearLayout)propertySearchFragment.findViewById(R.id.linearlayoutHiddenOption);
-	pickerContainer=(LinearLayout)propertySearchFragment.findViewById(R.id.pickerContainer);
-	
-	if (savedInstanceState == null) {
-		inVisibleView(linearlayoutHiddenOption);
+
+		wheel = (WheelView) propertySearchFragment.findViewById(R.id.p1);
+		wheel.setViewAdapter(new ArrayWheelAdapter(homeActivity, wheelMenu1));
+		wheel.setVisibleItems(2);
+		wheel.setCurrentItem(0);
+		wheel.addChangingListener(changedListener);
+		wheel.addScrollingListener(scrolledListener);
+		linearLayoutParentContainer = (LinearLayout) propertySearchFragment
+				.findViewById(R.id.linearLayoutParentContainer);
+		linearLayoutParentContainer.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				inVisibleView(pickerContainer);
+			}
+		});
 	}
-	
-    wheel = (WheelView) propertySearchFragment.findViewById(R.id.p1);
-	wheel.setViewAdapter(new ArrayWheelAdapter(homeActivity,wheelMenu1));
-	wheel.setVisibleItems(2);
-	wheel.setCurrentItem(0);
-	wheel.addChangingListener(changedListener);
-	wheel.addScrollingListener(scrolledListener);
-	linearLayoutParentContainer = (LinearLayout)propertySearchFragment.findViewById(R.id.linearLayoutParentContainer);
-	linearLayoutParentContainer.setOnClickListener(new OnClickListener() {
-		
-		@Override
-		public void onClick(View v) {
-			// TODO Auto-generated method stub
-			inVisibleView(pickerContainer);
-		}
-	});
-}
 
 	OnWheelScrollListener scrolledListener = new OnWheelScrollListener() {
 		public void onScrollStarts(WheelView wheel) {
