@@ -45,28 +45,27 @@ public class PropertySearchFragment extends BaseFragment {
 	};
 
 	private PickerValueContainer pickerValueContainer;
-	String wheelMenu1[] = new String[] { "Country 1", "Country 2", "Country 3",
-			"Country 4", "Country 5" };
+	String wheelMenu1[] = new String[] { "0","1", "2", "3", "4", "5", "6", "7",
+			"8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18",
+			"19", "20" };
 	Map<Integer, String> list;
-    
-	int [] bedRoomRange = new int[21];
-    //long [] priceRange = new long[1000001];	
-	
+
+	int[] bedRoomRange = new int[21];
+
+	// long [] priceRange = new long[1000001];
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		this.savedInstanceState = savedInstanceState;
-		
-		
-		/*for(int bedroomIndex=0;bedroomIndex<=20;bedroomIndex++){
-			bedRoomRange[bedroomIndex]=bedroomIndex;
-		}
-		int priceRangeIndex = 0;
-		while(priceRangeIndex<=1000000){
-		priceRangeIndex+=10000;
-		//priceRange = (float) priceRangeIndex;
-		}*/
+
+		/*
+		 * for(int bedroomIndex=0;bedroomIndex<=20;bedroomIndex++){
+		 * bedRoomRange[bedroomIndex]=bedroomIndex; } int priceRangeIndex = 0;
+		 * while(priceRangeIndex<=1000000){ priceRangeIndex+=10000; //priceRange
+		 * = (float) priceRangeIndex; }
+		 */
 	}
 
 	@Override
@@ -74,7 +73,7 @@ public class PropertySearchFragment extends BaseFragment {
 			Bundle savedInstanceState) {
 		propertySearchFragment = inflater.inflate(
 				R.layout.property_search_fragment, container, false);
-		//Toast.makeText(homeActivity, "onCreateView", 1).show();
+		// Toast.makeText(homeActivity, "onCreateView", 1).show();
 		setUi();
 		setFilterValue();
 		return propertySearchFragment;
@@ -172,7 +171,7 @@ public class PropertySearchFragment extends BaseFragment {
 			@Override
 			public void onClick(View v) {
 				pickerValueContainer = PickerValueContainer.BEDROOMS_FROM;
-				//visibleView(pickerContainer);
+				visibleView(pickerContainer);
 			}
 		});
 
@@ -183,7 +182,7 @@ public class PropertySearchFragment extends BaseFragment {
 			@Override
 			public void onClick(View v) {
 				pickerValueContainer = PickerValueContainer.BEDROOMS_TO;
-				//visibleView(pickerContainer);
+				// visibleView(pickerContainer);
 			}
 		});
 
@@ -194,7 +193,7 @@ public class PropertySearchFragment extends BaseFragment {
 			@Override
 			public void onClick(View v) {
 				pickerValueContainer = PickerValueContainer.PRICE_MIN;
-				//visibleView(pickerContainer);
+				// visibleView(pickerContainer);
 			}
 		});
 
@@ -206,7 +205,7 @@ public class PropertySearchFragment extends BaseFragment {
 			public void onClick(View v) {
 
 				pickerValueContainer = PickerValueContainer.PRICE_MAX;
-				//visibleView(pickerContainer);
+				// visibleView(pickerContainer);
 			}
 		});
 		textViewBedroomsFrom = (TextView) propertySearchFragment

@@ -123,35 +123,35 @@
                     android:id="@+id/buttonLookingFor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@android:color/transparent"
+                    android:background="@drawable/selector"
                     android:drawableRight="@drawable/rightarrow"
                     android:gravity="left|center_vertical"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
                     android:text="Looking for ..." />
 
                 <Button
                     android:id="@+id/buttonWhere"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@android:color/transparent"
+                    android:background="@drawable/selector"
                     android:drawableRight="@drawable/rightarrow"
                     android:drawableTop="@drawable/separator_horizontal_white"
                     android:gravity="left|center_vertical"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
                     android:text="Where" />
 
                 <Button
                     android:id="@+id/buttonDistrict"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@android:color/transparent"
+                    android:background="@drawable/selector"
                     android:drawableRight="@drawable/rightarrow"
                     android:drawableTop="@drawable/separator_horizontal_white"
                     android:gravity="left|center_vertical"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
                     android:text="District"
                     android:visibility="gone" />
 
@@ -159,12 +159,12 @@
                     android:id="@+id/buttonCounty"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@android:color/transparent"
+                    android:background="@drawable/selector"
                     android:drawableRight="@drawable/rightarrow"
                     android:drawableTop="@drawable/separator_horizontal_white"
                     android:gravity="left|center_vertical"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
                     android:text="County?"
                     android:visibility="gone" />
 
@@ -172,12 +172,12 @@
                     android:id="@+id/buttonParish"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@android:color/transparent"
+                    android:background="@drawable/selector"
                     android:drawableRight="@drawable/rightarrow"
                     android:drawableTop="@drawable/separator_horizontal_white"
                     android:gravity="left|center_vertical"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
                     android:text="Parish?"
                     android:visibility="gone" />
             </LinearLayout>
@@ -193,11 +193,11 @@
                     android:id="@+id/buttonMoreOption"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@android:color/transparent"
+                    android:background="@drawable/selector"
                     android:drawableRight="@drawable/rightarrow"
                     android:gravity="left|center_vertical"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
                     android:text="More options" />
             </LinearLayout>
 
@@ -222,18 +222,17 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/activity_vertical_margin"
                     android:background="@drawable/rounded_background_gray"
-                    android:orientation="vertical"
-                    android:paddingBottom="10dp"
-                    android:paddingTop="10dp" >
+                    android:orientation="vertical" >
 
                     <RelativeLayout
                         android:id="@+id/relativeLayoutBedroomsFrom"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:background="@android:color/transparent"
-                        android:gravity="center_vertical" >
+                        android:background="@drawable/selector"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="10dp" >
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -268,10 +267,11 @@
                         android:id="@+id/relativeLayoutBedroomsTo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:background="@android:color/transparent"
-                        android:gravity="center_vertical" >
+                        android:background="@drawable/selector"
+                        android:gravity="center_vertical"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp" >
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -311,18 +311,17 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/activity_vertical_margin"
                     android:background="@drawable/rounded_background_gray"
-                    android:orientation="vertical"
-                    android:paddingBottom="10dp"
-                    android:paddingTop="10dp" >
+                    android:orientation="vertical" >
 
                     <RelativeLayout
                         android:id="@+id/relativeLayoutPriceMin"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:background="@android:color/transparent"
-                        android:gravity="center_vertical" >
+                        android:background="@drawable/selector"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="10dp" >
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -357,10 +356,11 @@
                         android:id="@+id/relativeLayoutPriceMax"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:background="@android:color/transparent"
-                        android:gravity="center_vertical" >
+                        android:background="@drawable/selector"
+                        android:gravity="center_vertical"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp" >
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -397,11 +397,11 @@
                     android:id="@+id/buttonPropertySearch"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@android:color/transparent"
+                    android:background="@drawable/selector"
                     android:drawableRight="@drawable/search_icon_black"
                     android:gravity="right|center_vertical"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
                     android:text="Search   " />
             </LinearLayout>
 
@@ -419,7 +419,7 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_alignParentBottom="true"
-        android:background="@android:color/darker_gray"
+        android:background="@drawable/background_gradient"
         android:orientation="vertical" >
 
         <com.finsolutia.wheelpicker.WheelView

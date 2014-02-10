@@ -80,23 +80,23 @@
             android:id="@+id/buttonAny"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:background="@android:color/transparent"
+            android:background="@drawable/selector"
             android:drawableRight="@drawable/rightarrow"
             android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
             android:text="Any" />
 
         <Button
             android:id="@+id/buttonNearMe"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:background="@android:color/transparent"
+            android:background="@drawable/selector"
             android:drawableRight="@drawable/rightarrow"
             android:drawableTop="@drawable/separator_horizontal_grey"
             android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
             android:text="Near me" />
     </LinearLayout>
 

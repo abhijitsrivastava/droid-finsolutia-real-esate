@@ -6,5 +6,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="euro">\u20ac</string>
     <string name="pound">\u00a3</string>
+    <string name="map_key">AIzaSyARkuIg-xPjzz_3FOxGgyi6MbUEK1MoqZ4</string>
 
 </resources>
